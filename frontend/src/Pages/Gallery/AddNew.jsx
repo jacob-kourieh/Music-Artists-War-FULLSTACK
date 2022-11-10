@@ -62,7 +62,7 @@ const AddNew = ({ close }) => {
         <div className="overlay">
             <div className="dialog">
                 <h2>Add a new hamster</h2>
-                <form onSubmit={() => addArtist()}>
+                <form onSubmit={(e) => { addArtist(); e.preventDefault() }}>
                     <label htmlFor="name">Name:</label>
                     <input type="text" onChange={(e) => setName(e.target.value)} />
 
