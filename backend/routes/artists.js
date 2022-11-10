@@ -59,7 +59,7 @@ recordRoutes.route('/artist').post(function (req, response) {
         .collection('artists')
         .insertOne(newArtist, function (err, res) {
             if (err) {
-                response.status(404).json('WRONG !!')
+                response.status(400).json('WRONG !!')
             }
             else {
                 response.status(200).json(newArtist)

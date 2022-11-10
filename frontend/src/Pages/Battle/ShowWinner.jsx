@@ -9,7 +9,7 @@ function ShowWinner({ close, artist }) {
 
     useEffect(() => {
         async function updatedWinner() {
-            let response = await fetch(`${baseURL}/artists/${artist._id}`, {
+            let response = await fetch(`${baseURL}/artist/${artist._id}`, {
                 method: 'GET'
             })
             let data = await response.json()
