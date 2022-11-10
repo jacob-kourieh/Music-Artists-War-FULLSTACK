@@ -1,0 +1,336 @@
+/* ----- Gallery ----- */
+
+.gallery-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 6rem;
+    
+}
+
+.gallery-title {
+    text-transform: uppercase;
+    color:  rgb(24, 93, 98);
+    font-size: 3.5em;
+    margin-bottom: 2rem;
+    
+}
+.gallery-title h1 {
+    box-shadow: 4px 5px 10px 1px rgba(0, 0, 0, 0.11);
+    
+}
+
+.gallery-header p {
+    max-width: 30em;
+    text-align: center;
+    color: rgb(24, 93, 98);
+    line-height: 1.7em;
+    font-weight: 300;
+    margin-bottom: 3rem;
+    
+}
+
+.gallery-header button { 
+   min-width: 10em;
+   font-weight: 700;
+}
+
+.gallery-header button:hover {
+    background-color: var(--dark-orange);
+    color: rgb(255, 252, 245);
+}
+
+.btn-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 6em;
+    justify-content: space-evenly;
+}
+/* XXX --- Gallery --- XXX */
+
+/* ----- Hamster Grid ----- */
+
+.hamster-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+    margin: 4rem 4rem 0 4rem;
+    
+}
+
+.hamster-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.hamster-centertext {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin-block: auto;
+}
+
+/* .hamster-card:hover {
+    transition: all .5s;
+    transform: scale(1.01);
+} */
+
+.hamster-image  {
+    object-fit: cover;  
+    border-radius: 50%;
+    cursor: pointer;
+    height: 300px;
+    width: 333px;
+    box-shadow: 4px 5px 10px 1px rgba(0, 0, 0, 0.11);
+}
+
+.hamster-card h3 {
+    text-transform: uppercase;
+    margin-bottom: 0;
+}
+
+.hamster-card h3, .hamster-card p {
+    padding-left: 1rem;
+}
+
+.hamster-card p  {
+    font-size: .9em;
+}
+
+.remove-btn {
+    background-color: rgba(255, 0, 0, 0.813); 
+    border: none;
+    border-radius: 4em;
+    width: 20%;
+    padding: .5em;
+    font-size: .9em;
+    text-transform: uppercase;
+    cursor: pointer;
+    align-self: center;
+    font-weight: 700;
+}
+
+/* .in-btn {
+    background-color: rgba(255, 136, 0, 0.813); 
+    border: none;
+    border-radius: 4em;
+    width: 20%;
+    padding: .5em;
+    font-size: .9em;
+    text-transform: uppercase;
+    cursor: pointer;
+    align-self: center;
+    font-weight: 700;
+} */
+
+/* .remove-btn:hover,
+ .in-btn:hover {
+    background-color: rgb(135, 186, 182);
+    transition: .5s all;
+    color: grey;
+} */
+
+.btn-grup{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 1em;
+    margin-top: 1em;
+}
+
+/* XXX --- Hamster Grid --- XXX */
+
+/* ----- HamsterOverlay onClick ----- */
+
+.hamster-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hamster-overlay-dialog {
+    background-color: rgb(211, 146, 200);
+    width: 20em;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1em;
+    border-radius: var(--box-radius);
+    box-shadow: 4px 5px 10px 1px rgba(0, 0, 0, 0.11);
+}
+
+.hamster-overlay-dialog .overlay-hamster-image {
+    width: 100%;
+    max-height: 200px;
+    border-radius: var(--box-radius);
+    object-fit: cover;
+    max-height: 279px;
+}
+
+.hamster-overlay-dialog .close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: .5rem;
+
+    border-radius: 50%;
+    border: none;
+    height: 2rem;
+    width: 2rem;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.874);
+    color: rgb(211, 146, 200);;
+    cursor: pointer;
+}
+
+.hamster-overlay-dialog .close-btn:hover {
+   
+    color: var(--bg-color);
+    transition: .3s all;
+}
+
+
+
+
+.match-history {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+    text-align: center; 
+}
+
+.hamster-overlay .match-history{
+    background-color: rgba(255, 255, 255, 0.387);
+    padding: 1rem;
+    border-radius: var(--box-radius);
+    box-shadow: var(--box-shadow);
+}
+
+
+/* XXX --- HamsterOverlay onClick --- XXX */
+
+
+
+
+
+/* ----- Add Hamster Overlay ----- */
+.overlay {
+    position: fixed;
+    background-color: white;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+}
+
+.overlay .dialog {
+    background-color: rgb(211 146 200 / 85%);
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2em 1.5rem;
+    border-radius: var(--box-radius);  
+    box-shadow: 4px 5px 10px 1px rgba(0, 0, 0, 0.11);
+}
+
+.overlay .dialog form {
+    display: flex;
+    flex-direction: column;
+    font-weight:bold; 
+    margin-bottom: 2rem;
+}
+
+.input-field {
+    background-color: white;
+}
+
+#name, #age {
+    background-color: white;
+}
+
+.overlay .dialog form input {
+    margin-bottom: 1rem;
+    padding: .5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: var(--box-radius);
+    outline: none;
+}
+
+.overlay .dialog form label {
+    margin-bottom: .3rem;
+    margin-left: .2em;
+}
+
+.overlay .dialog .close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 1.5rem;
+
+    border-radius: 50%;
+    border: none;
+    height: 2rem;
+    width: 2rem;
+    font-weight: bold;
+    background-color: var(--darkest);
+    color: var(--muddy-yellow);
+    cursor: pointer;
+}
+
+.overlay .dialog .close-btn:hover {
+   
+    color: white;
+    transition: .3s all;
+}
+
+.overlay .dialog .add-movie-btn {
+    position: absolute;
+    bottom: .3rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-size: 1rem;
+    padding: .7rem 2rem;
+    background-color: var(--yellow);
+    border-radius: var(--standard-border-radius);
+    color: var(--bg-color);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.overlay .dialog .add-movie-btn:hover {
+    background-color: var(--bg-color);
+    color: var(--yellow);
+}
+
+.main-btn:disabled {
+    background-color: rgb(187, 187, 187);
+    color: rgb(235, 235, 235);
+}
+
+.overlay .dialog form .valid {
+    border: 1px solid #14971E ;
+}
+
+.overlay .dialog form .invalid {
+    border: 1px solid var(--dark-orange) ;
+}
+
+.input-alert {
+    font-size: .8em;
+    font-weight: 400;
+    margin-top: -1em;
+    margin-bottom: 1em;
+    margin-left: .2em;
+    
+}

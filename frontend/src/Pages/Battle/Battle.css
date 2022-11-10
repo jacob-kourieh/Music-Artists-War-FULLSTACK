@@ -1,0 +1,135 @@
+/* ----- MATCH CONTAINER ----- */
+.play-match-container  {
+    text-align: center;
+    /* margin-top: 2em; */
+}
+
+.hamster-match-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+}
+
+.hamster-match-container .vs-string {
+    font-family: var(--feature-font);
+    font-size: 4em;
+}
+
+.hamster-match-card {
+    display: flex;
+    /* align-items: center; */
+    flex-direction: column;
+}
+
+.hamster-match-card h3 {
+    padding: 0;
+}
+
+.contestant-hamster-img {
+    height: 337px;
+    width: 333px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 4px 5px 10px 1px rgba(0, 0, 0, 0.11);
+}
+.item-name {
+    /* margin: 0.5em; */
+    margin-block-start: auto;
+    
+}
+/* .vote-btn {
+    max-width: 80%;
+    margin: 2em 0 1em 0;
+    align-self: center;
+} */
+
+.play-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-content: space-around;
+    margin-top: 4rem;
+    gap: 4rem;
+    align-items: center;
+   
+}
+
+.play-container :nth-child(2) {
+    order: 2;
+}
+
+/* XXX --- MATCH CONTAINER --- XXX */
+
+/* ----- WINNER OVERLAY ----- */
+
+.winner-overlay-container {
+    
+    position: fixed;
+    background-color: rgb(211, 146, 200);
+    /* height: 100vh; */
+    width: 100vw;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .winner-hamster-card {
+    display: flex;
+    padding: 1.5em;
+    max-height: 87vh;
+    flex-direction: column-reverse;
+    flex-wrap: nowrap;
+} */
+
+.winner-hamster-h1 {
+    color: rgb(37, 49, 59);
+    font-family: var(--feature-font);
+    font-size: 2em;
+    margin: 0 0 0.4em 0;
+}
+
+.winner-overlay-container .main-btn {
+    margin: 2em 0 1em 0;
+}
+
+
+.winner-overlay-container .hamster-card:hover {
+    transform: scale(1.0);
+}
+
+.winner-overlay-container .hamster-image {
+    max-height: 200px;
+    object-fit: cover;
+}
+
+.winner-overlay-container .show-winner-match {
+    background-color: none;
+}
+
+/* XXX --- WINNER OVERLAY --- XXX */
+
+/* ----- Responsive Design ------ */
+
+/* Bigger smartphones & tablets */
+.match-history {
+    display: flex;
+    align-items: center;
+    margin: 23px;
+    flex-direction: column;
+}
+
+.match-points {
+    font-weight: bolder;
+}
+
+.hamster-winner-image {
+    object-fit: cover;  
+    border-radius: 50%;
+    box-shadow: 4px 5px 10px 1px rgba(0, 0, 0, 0.11);
+    height: 300px;
+    width: 333px;
+}

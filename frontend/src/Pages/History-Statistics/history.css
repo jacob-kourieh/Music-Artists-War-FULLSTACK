@@ -1,0 +1,82 @@
+.history-Container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-content: space-around;
+  margin-top: 3rem;
+  gap: 2rem;
+  overflow-y: hidden;
+}
+
+  .mastch-wrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff38;
+    padding: 2rem;
+    margin: 0 5rem 0 5rem;
+    border-radius: 2rem;
+    box-shadow: 4px 5px 10px 1px rgba(0, 0, 0, 0.11);
+  
+  }
+
+
+  .match-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+  
+  }
+
+  
+  .winner-history {
+    text-align: center;
+    justify-content: center;
+    margin: 1em;
+  }
+  
+  .loser-history {
+    text-align: center;
+    justify-content: center;
+    margin: 1em;
+  }
+  
+
+  .winner-text,
+  .loser-text {
+    margin-top: 0em;
+  }
+  .buttondelete {
+    border-style: none;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .clickdelete {
+    border-radius: 19px;
+    width: 11em;
+    height: 5vh;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+  }
+
+
+
+  .clickdelete:hover {
+    background-color: #d04a4a;
+  }
+
+  .history-image {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 4px 5px 10px 1px rgba(0, 0, 0, 0.11);
+  }
+
+
+
+

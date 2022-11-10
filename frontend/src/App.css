@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700;800&family=Slackey&display=swap');
+
+/* --- Global --- */
+
+:root {
+  /* Colors */
+
+  --orange: #EE9B00;
+  --muddy-yellow: #E9D8A6;
+  --mint: #94D2BD;
+  --light-blue: #0A9396;
+  --deep-sea: #005F73;
+  --darkest: #001219;
+
+  /* Fonts */
+  --feature-font: 'Slackey', cursive; 
+  --open-sans: 'Open Sans', cursive;
+
+  /* Main features */
+  --box-radius: .5em;
+  --box-shadow: 4px 5px 10px 1px rgba(0, 0, 0, 0.11);
+  --transition-hover: .2s all;
+  --scale-hover: scale(1.02);
+}
+
+* {
+  font-family: var(--open-sans);
+  color: var(--darkest);
+}
+
+/* .main-btn {
+  background-color: var(--orange); 
+  color: var(--darkest);
+  border: none;
+  border-radius: 4em;
+  min-width: 60%;
+  padding: 1em;
+  font-size: 1em;
+  font-weight: 800;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.main-btn:hover {
+  background-color: var(--dark-orange);
+  transition: var(--transition-hover);
+  color: var(--muddy-yellow);
+  transform: var(--scale-hover)
+} */
+
+.App {
+  
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  min-height: 100vh;
+	flex: 1 1 auto;
+	background: linear-gradient(-135deg, #E4A972, #9941D8) fixed;
+}
+.main-btn {
+	font-size: 1.2em;
+	border-radius: 1em;
+	padding: 0.5em 1em;
+	outline: none;
+	border: 1px solid rgb(31, 167, 177);
+    background-color: rgb(31, 167, 177);
+    color: white;
+}
+
+.main-btn:hover {
+	cursor: pointer;
+	border: 1px solid black;
+	background-color: black;
+	color: rgb(31, 167, 177);
+}
+
+/* XXX --- Nav --- XXX */
+
+/* Iphone X and smaller */
+/* @media screen and (max-width: 440px) {
+
+  .App {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+
+  .App nav {
+    padding-left: 1em;
+  }
+
+
+
+
+} */
