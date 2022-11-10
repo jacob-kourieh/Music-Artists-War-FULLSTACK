@@ -84,6 +84,7 @@ import { useEffect, useState } from 'react'
 import "../History-Statistics/history.css"
 import CircularProgress from '@mui/material/CircularProgress';
 import { FaSadCry } from 'react-icons/fa';
+import { baseURL } from '../../Utils/baseURL'
 import { GiPodiumWinner } from 'react-icons/gi';
 
 
@@ -95,7 +96,7 @@ const History = () => {
 
     useEffect(() => {
         async function getMatches() {
-            const response = await fetch("http://localhost:1335/matches",
+            const response = await fetch(`${baseURL}/matches`,
                 { method: 'GET' })
             const data = await response.json()
             setMatches(data)
@@ -107,7 +108,7 @@ const History = () => {
 
     useEffect(() => {
         async function getTheArtists() {
-            const response = await fetch('http://localhost:1335/artists',
+            const response = await fetch(`${baseURL}/artists`,
                 { method: 'GET' })
             const data = await response.json()
             setGetArtists(data)
@@ -117,7 +118,7 @@ const History = () => {
 
 
     async function deleteAMatch(match) {
-        await fetch(`http://localhost:1335/matches/delete/${match._id}`,
+        await fetch(`${baseURL}/matches/delete/${match._id}`,
             { method: 'DELETE' })
         console.log('Deleted: ')
         setUpdateMatches(true)

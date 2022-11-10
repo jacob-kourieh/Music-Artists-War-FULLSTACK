@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import "../Gallery/gallery.css"
 import ShowInfo from './ShowInfo'
 import CircularProgress from '@mui/material/CircularProgress';
+import { baseURL } from '../../Utils/baseURL'
 import { BsFillTrashFill, BsFillArrowUpRightSquareFill } from 'react-icons/bs';
 
 
@@ -15,7 +16,7 @@ function Hamsters() {
 
     //fetch
     function getArtists() {
-        fetch("http://localhost:1335/artists")
+        fetch(`${baseURL}/artists`)
             .then((response) => response.json())
             .then((data) => setArtists(data));
     }
@@ -26,7 +27,7 @@ function Hamsters() {
     //Delete hamster in api
     async function deleteArtists(id) {
         const response = await fetch(
-            "http://localhost:1335/artist/delete/" + id,
+            `${baseURL}/artist/delete/` + id,
             {
                 method: "DELETE",
             }

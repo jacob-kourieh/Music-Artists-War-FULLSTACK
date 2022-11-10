@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import "../Gallery/gallery.css"
+import { baseURL } from '../../Utils/baseURL'
 import FileBase64 from "react-file-base64"
 
 const AddNew = ({ close }) => {
@@ -16,7 +17,7 @@ const AddNew = ({ close }) => {
 
 
     function getArtists() {
-        fetch("http://localhost:1335/artists")
+        fetch(`${baseURL}/artists/`)
             .then((response) => response.json())
             .then((data) => setArtists(data));
     }
@@ -44,7 +45,7 @@ const AddNew = ({ close }) => {
             genres: genres,
             imgName: img
         }
-        const response = await fetch("http://localhost:1335/artist", {
+        const response = await fetch(`${baseURL}/artist`, {
             method: "POST",
             body: JSON.stringify(hamster),
             headers: { "Content-Type": "application/json" }

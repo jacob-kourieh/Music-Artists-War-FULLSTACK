@@ -1,5 +1,6 @@
 import React from "react"
 import { useEffect, useState } from "react";
+import { baseURL } from '../../Utils/baseURL'
 import "../History-Statistics/statistics.css"
 
 
@@ -8,11 +9,11 @@ function StatisticsHamster() {
     const [losers, setLosers] = useState([]);
 
     async function getWinners() {
-        const response = await fetch("http://localhost:1335/artists/winners");
+        const response = await fetch(`${baseURL}/artists/winners`);
         setWinners(await response.json());
     }
     async function getLosers() {
-        const response = await fetch("http://localhost:1335/artists/losers");
+        const response = await fetch(`${baseURL}/artists/losers`);
         setLosers(await response.json());
     }
 
