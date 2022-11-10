@@ -133,8 +133,7 @@ function Battle() {
 
                     </div>
                 </article>
-            ))
-                : <CircularProgress />
+            )) : <CircularProgress />
             }
 
             <h1 className="vs-string"> VS.</h1>

@@ -31,8 +31,6 @@ function ShowWinner({ close, artist }) {
                 {
                     updatedData ?
                         <section>
-
-
                             <img className="hamster-winner-image" src={artist.imgName} alt="hamster"  ></img>
                             <h2>{artist.name}</h2>
                             <div className="match-history">
@@ -42,7 +40,7 @@ function ShowWinner({ close, artist }) {
                                 <span>Defeats: <span className="match-points"> {updatedData.defeats}</span></span>
                             </div>
                         </section>
-                        : " <CircularProgress />"
+                        : <CircularProgress />
                 }
                 <button className="main-btn" onClick={close}> New Game </button>
             </article>
