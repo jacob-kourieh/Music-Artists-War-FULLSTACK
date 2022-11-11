@@ -8,15 +8,13 @@ import StatisticsHamster from './Pages/History-Statistics/StatisticsHamster';
 import History from './Pages/History-Statistics/History';
 import Play from './Pages/Battle/Play';
 import ShowInfo from './Pages/Gallery/ShowInfo';
-
+import Footer from './Components/Footer';
 
 
 function App() {
-
   return (
 
     <section className="App">
-
       <BrowserRouter>
         <header className="App-header">
           <nav>
@@ -34,6 +32,9 @@ function App() {
             <Route path='/show' element={<ShowInfo />} />
           </Routes>
         </main>
+        <footer>
+          <Footer />
+        </footer>
       </BrowserRouter>
     </section>
 

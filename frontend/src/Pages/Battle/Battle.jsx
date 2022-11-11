@@ -5,8 +5,6 @@ import "./Battle.css"
 import CircularProgress from '@mui/material/CircularProgress';
 
 
-
-
 function Battle() {
     const [artists, setArtists] = useState([])
 
@@ -14,10 +12,11 @@ function Battle() {
     let [loser, setLoser] = useState([])
     const [match, setMatch] = useState([])
 
-    const [showAddHamsterOverlay, setShowAddHamsterOverlay] = useState(false)
+    const [showAddArtistOverlay, setShowAddArtistOverlay] = useState(false)
 
+
+    //get random på 2 st artister genom fetch
     const getRandomArtists = () => {
-        //Hämtar data genom fetch
         fetch(`${baseURL}/artists/random`)
             .then(res => res.json())
             .then(data => setArtists(data))
@@ -34,7 +33,7 @@ function Battle() {
         setLoser()
     }
 
-
+    //Uptadera apiet med PUT +1 wins och games på artists objekt
     async function updateWinner(winner) {
         await fetch(`${baseURL}/artists/` + winner._id,
             {
@@ -49,7 +48,7 @@ function Battle() {
         setWinner(winner)
     }
 
-
+    //Uptadera apiet med PUT +1 defeats och games på artists objekt
     async function updateLoser(loser) {
         await fetch(`${baseURL}/artists/` + loser._id,
             {
@@ -64,13 +63,8 @@ function Battle() {
         setLoser(loser)
     }
 
-    /* useEffect(() => {
-        setWinner(winner)
-        setLoser(loser)
-    }, []) */
 
-
-    //POST match(winner och loser i matchobjekt)
+    //POST match(winner-id och loser-id i matchobjekt för att hämta data sen
     async function postMatch(winner, loser) {
         const response = await fetch(`${baseURL}/matches`, {
             method: 'POST',
@@ -80,7 +74,6 @@ function Battle() {
         const data = await response.text();
         console.log('match data is: ' + data);
 
-        //setMatch([...hamsters]);
         setMatch({ "winner": winner._id, "loser": loser._id })
         console.log('winner is: ' + winner.name + ' loser is ' + loser.name);
         console.log('match is ' + match);
@@ -91,81 +84,40 @@ function Battle() {
         await updateWinner(win)
         await updateLoser(lose)
         await postMatch(win, lose)
-        setShowAddHamsterOverlay(true)
-        //let ham =   hamsters.filter(ham => ham !== hamsters)[0]
+        setShowAddArtistOverlay(true)
     }
 
 
-
-    //kopplar till SHOWINNER component med props{winner} 
+    //Winner artist Overlay sidan
     let addHamsterOverlay
-    if (showAddHamsterOverlay) {
-        const closeOverlay = () => { setShowAddHamsterOverlay(false); newGame() }
+    if (showAddArtistOverlay) {
+        const closeOverlay = () => { setShowAddArtistOverlay(false); newGame() }
         addHamsterOverlay = <ShowWinner close={closeOverlay} artist={winner} />
     }
 
 
-    /*  const newBattle = () => {
-         window.location.reload();
-     } */
-
-
-    /*  const handleClick = event => {
-         event.currentTarget.disabled = true;
-         console.log('button clicked');
-     }; */
-
     return (
         <div className="play-container">
             {artists ? artists.map((artist, i) => (
-
-                <article key={i} className="hamster-card hamster-match-card">
+                <article key={i} className=" artist-match-card">
                     <div >
-                        <img alt="hamster" src={artist.imgName} className="contestant-hamster-img"></img>
+                        <img alt="artist" src={artist.imgName} className="contestant-artist-img"></img>
                         <h2 className='item-name'>{artist.name}</h2>
                     </div>
                     <div>
                         <button
                             className="main-btn vote-btn"
-                            onClick={() => { handleCutestClick(artist, artists?.filter(ham => ham !== artist)[0]) }}>
-                            VOTE
+                            onClick={() => { handleCutestClick(artist, artists?.filter(art => art !== artist)[0]) }}>
+                            Vote
                         </button>
-
                     </div>
                 </article>
             )) : <CircularProgress />
             }
-
             <h1 className="vs-string"> VS.</h1>
             {addHamsterOverlay}
         </div>
-
-
     )
-
-
 }
 
 export default Battle
-
-
-
-
-
-
-
-//POST match(winner och loser i matchobjekt)
-/* async function postMatch(winner, loser) {
-    const response = await fetch("http://localhost:1333/matches", {
-        method: 'POST',
-        body: JSON.stringify({ winner: winner, loser: loser }),
-        headers: { "Content-Type": "application/json" }
-    });
-    const data = await response.text();
-    console.log('match data is: ' + data);
-
-    //setMatch([...hamsters]);
-    setMatch({ "winnerId": winner, "loserId": loser })
-    console.log('winner is: ' + winner.name + ' loser is ' + loser.name);
-    console.log('match is ' + match);
-} */

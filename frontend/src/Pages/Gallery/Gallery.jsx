@@ -1,25 +1,24 @@
-
 import { useState } from "react"
 import "../Gallery/gallery.css"
-import Hamsters from "./Hamster"
+import Artists from "./Artists"
 import AddNew from "./AddNew"
 import { Link } from "react-router-dom"
-
 
 
 function Gallery() {
 
     const [showOverlayItem, setShowOverlayItem] = useState(false)
 
-
-    let addHamsterOverlay
+    //Overlay sidan med stäng function
+    let addArtistOverlay
     if (showOverlayItem) {
         const closeOverlay = () => setShowOverlayItem(false);
-        addHamsterOverlay = <AddNew close={closeOverlay} />
+        addArtistOverlay = <AddNew close={closeOverlay} />
     }
 
+
+    // visa overlay siadan
     const showOverlay = () => {
-        // visa overlay
         setShowOverlayItem(true)
     }
 
@@ -35,8 +34,8 @@ function Gallery() {
             </article>
 
             <article className="gallery-container">
-                <Hamsters />
-                {addHamsterOverlay}
+                <Artists />
+                {addArtistOverlay}
             </article>
         </section>
     )

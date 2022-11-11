@@ -1,11 +1,9 @@
 /* ----- Gallery ----- */
-
 .gallery-header {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 6rem;
-    
 }
 
 .gallery-title {
@@ -27,7 +25,6 @@
     line-height: 1.7em;
     font-weight: 300;
     margin-bottom: 3rem;
-    
 }
 
 .gallery-header button { 
@@ -47,9 +44,8 @@
     gap: 6em;
     justify-content: space-evenly;
 }
-/* XXX --- Gallery --- XXX */
 
-/* ----- Hamster Grid ----- */
+/*  Gallery */
 
 .hamster-grid {
     display: flex;
@@ -67,19 +63,15 @@
 }
 
 
-.hamster-centertext {
+.artist-centertext {
     display: flex;
     align-content: center;
     justify-content: center;
     margin-block: auto;
 }
 
-/* .hamster-card:hover {
-    transition: all .5s;
-    transform: scale(1.01);
-} */
 
-.hamster-image  {
+.artist-image  {
     object-fit: cover;  
     border-radius: 50%;
     cursor: pointer;
@@ -114,25 +106,6 @@
     font-weight: 700;
 }
 
-/* .in-btn {
-    background-color: rgba(255, 136, 0, 0.813); 
-    border: none;
-    border-radius: 4em;
-    width: 20%;
-    padding: .5em;
-    font-size: .9em;
-    text-transform: uppercase;
-    cursor: pointer;
-    align-self: center;
-    font-weight: 700;
-} */
-
-/* .remove-btn:hover,
- .in-btn:hover {
-    background-color: rgb(135, 186, 182);
-    transition: .5s all;
-    color: grey;
-} */
 
 .btn-grup{
     display: flex;
@@ -142,18 +115,17 @@
     margin-top: 1em;
 }
 
-/* XXX --- Hamster Grid --- XXX */
 
-/* ----- HamsterOverlay onClick ----- */
+/* ----- ARTIST GRID BOX ----- */
 
-.hamster-overlay {
+.artist-overlay {
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
 
-.hamster-overlay-dialog {
+.artist-overlay-dialog {
     background-color: rgb(211, 146, 200);
     width: 20em;
     display: inline-block;
@@ -166,7 +138,7 @@
     box-shadow: 4px 5px 10px 1px rgba(0, 0, 0, 0.11);
 }
 
-.hamster-overlay-dialog .overlay-hamster-image {
+.artist-overlay-dialog .overlay-artist-image {
     width: 100%;
     max-height: 200px;
     border-radius: var(--box-radius);
@@ -174,7 +146,7 @@
     max-height: 279px;
 }
 
-.hamster-overlay-dialog .close-btn {
+.artist-overlay-dialog .close-btn {
     position: absolute;
     top: 0;
     right: 0;
@@ -190,13 +162,11 @@
     cursor: pointer;
 }
 
-.hamster-overlay-dialog .close-btn:hover {
+.artist-overlay-dialog .close-btn:hover {
    
     color: var(--bg-color);
     transition: .3s all;
 }
-
-
 
 
 .match-history {
@@ -206,7 +176,7 @@
     text-align: center; 
 }
 
-.hamster-overlay .match-history{
+.artist-overlay .match-history{
     background-color: rgba(255, 255, 255, 0.387);
     padding: 1rem;
     border-radius: var(--box-radius);
@@ -214,13 +184,8 @@
 }
 
 
-/* XXX --- HamsterOverlay onClick --- XXX */
 
-
-
-
-
-/* ----- Add Hamster Overlay ----- */
+/* ----- Add Artist Overlay ----- */
 .overlay {
     position: fixed;
     background-color: white;

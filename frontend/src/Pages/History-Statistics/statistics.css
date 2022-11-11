@@ -28,6 +28,7 @@
 
 .statistics-container li {
 	list-style-type: none;
+	margin: 9em;
 }
 
 .statistics-image {

@@ -6,15 +6,13 @@ import { baseURL } from '../../Utils/baseURL'
 import { BsFillTrashFill, BsFillArrowUpRightSquareFill } from 'react-icons/bs';
 
 
+function Artists() {
 
-
-function Hamsters() {
-
-    const [showAddHamsterOverlay, setShowAddHamsterOverlay] = useState(false)
+    const [showAddArtistOverlay, setShowAddArtistOverlay] = useState(false)
     const [artists, setArtists] = useState([])
 
 
-    //fetch
+    //get fetch för att hämta alla artister fåm backend
     function getArtists() {
         fetch(`${baseURL}/artists`)
             .then((response) => response.json())
@@ -24,7 +22,7 @@ function Hamsters() {
         getArtists();
     }, []);
 
-    //Delete hamster in api
+    //Fetsh för ta bort artist från Apiet
     async function deleteArtists(id) {
         const response = await fetch(
             `${baseURL}/artist/delete/` + id,
@@ -38,27 +36,24 @@ function Hamsters() {
         );
     }
 
-
     const display = () => {
         setArtists(artists)
         window.location.reload();
     }
 
 
-    //Overlay
-    let addHamsterOverlay
-    if (showAddHamsterOverlay) {
-        const closeOverlay = () => { setShowAddHamsterOverlay(false); display() }
-        addHamsterOverlay = <ShowInfo close={closeOverlay} artist={artists} />
+    //Overlay sidan med stäng function
+    let addArtistOverlay
+    if (showAddArtistOverlay) {
+        const closeOverlay = () => { setShowAddArtistOverlay(false); display() }
+        addArtistOverlay = <ShowInfo close={closeOverlay} artist={artists} />
     }
 
     const handleShowMore = (star) => {
         console.log('you clicked', star)
-        setShowAddHamsterOverlay(true)
+        setShowAddArtistOverlay(true)
         setArtists(star)
     }
-
-
 
 
     return (
@@ -68,9 +63,9 @@ function Hamsters() {
                     <article key={i} className="hamster-gridcard">
                         <img
                             onClick={() => { handleShowMore(artist) }}
-                            className="hamster-image" src={artist.imgName} alt="hamster" >
+                            className="artist-image" src={artist.imgName} alt="artist" >
                         </img>
-                        <h2 className='hamster-centertext'>{artist.name}</h2>
+                        <h2 className='artist-centertext'>{artist.name}</h2>
 
 
                         <article className='btn-grup'>
@@ -85,7 +80,7 @@ function Hamsters() {
             }) : <CircularProgress />
 
             }
-            {addHamsterOverlay}
+            {addArtistOverlay}
 
 
 
@@ -93,10 +88,7 @@ function Hamsters() {
         </section>
     )
 
-
-
 }
 
 
-
-export default Hamsters;
+export default Artists;

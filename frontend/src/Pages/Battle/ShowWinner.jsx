@@ -4,9 +4,9 @@ import { baseURL } from '../../Utils/baseURL'
 import CircularProgress from '@mui/material/CircularProgress';
 
 function ShowWinner({ close, artist }) {
-
     const [updatedData, setUpdatedData] = useState([])
 
+    //Hämtar artist vinnaren med hjälp av _id genom fetchen
     useEffect(() => {
         async function updatedWinner() {
             let response = await fetch(`${baseURL}/artist/${artist._id}`, {
@@ -19,19 +19,14 @@ function ShowWinner({ close, artist }) {
     }, [])
 
 
-    console.log(artist);
-
-
-
-
     return (
         <div className="winner-overlay-container">
-            <article className=" winner-hamster-card">
-                <h1 className="winner-hamster-h1">You voted for</h1>
+            <article>
+                <h1 className="winner-artist-h1">You voted for</h1>
                 {
                     updatedData ?
                         <section>
-                            <img className="hamster-winner-image" src={artist.imgName} alt="hamster"  ></img>
+                            <img className="artist-winner-image" src={artist.imgName} alt="hamster"  ></img>
                             <h2>{artist.name}</h2>
                             <div className="match-history">
                                 <h4>Match history</h4>

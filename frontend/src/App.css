@@ -2,6 +2,22 @@
 
 /* --- Global --- */
 
+
+/* *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--open-sans);
+  color: var(--darkest);
+} */
+
+
+
+body{
+  min-height: 110vh;
+}
+
+
 :root {
   /* Colors */
 
@@ -23,10 +39,7 @@
   --scale-hover: scale(1.02);
 }
 
-* {
-  font-family: var(--open-sans);
-  color: var(--darkest);
-}
+
 
 /* .main-btn {
   background-color: var(--orange); 
@@ -48,16 +61,16 @@
   transform: var(--scale-hover)
 } */
 
-.App {
+/* .App {
   
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
-
+ */
 main {
-  min-height: 100vh;
-	flex: 1 1 auto;
+  /* min-height: 100vh; */
+	/* flex: 1 1 auto; */
 	background: linear-gradient(-135deg, #E4A972, #9941D8) fixed;
 }
 .main-btn {
@@ -95,3 +108,6 @@ main {
 
 
 } */
+
+
+

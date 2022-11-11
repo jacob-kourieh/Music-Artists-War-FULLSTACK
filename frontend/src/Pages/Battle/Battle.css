@@ -1,32 +1,33 @@
-/* ----- MATCH CONTAINER ----- */
+
 .play-match-container  {
     text-align: center;
+    min-height: 60em;
     /* margin-top: 2em; */
 }
 
-.hamster-match-container {
+.artist-match-container {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 2em;
 }
 
-.hamster-match-container .vs-string {
+.artist-match-container .vs-string {
     font-family: var(--feature-font);
     font-size: 4em;
 }
 
-.hamster-match-card {
+.artist-match-card {
     display: flex;
     /* align-items: center; */
     flex-direction: column;
 }
 
-.hamster-match-card h3 {
+.artist-match-card h3 {
     padding: 0;
 }
 
-.contestant-hamster-img {
+.contestant-artist-img {
     height: 337px;
     width: 333px;
     object-fit: cover;
@@ -34,15 +35,9 @@
     box-shadow: 4px 5px 10px 1px rgba(0, 0, 0, 0.11);
 }
 .item-name {
-    /* margin: 0.5em; */
+    margin: 0.5em;
     margin-block-start: auto;
-    
 }
-/* .vote-btn {
-    max-width: 80%;
-    margin: 2em 0 1em 0;
-    align-self: center;
-} */
 
 .play-container {
     display: flex;
@@ -53,19 +48,17 @@
     margin-top: 4rem;
     gap: 4rem;
     align-items: center;
-   
+    overflow-y: hidden;
 }
 
 .play-container :nth-child(2) {
     order: 2;
 }
 
-/* XXX --- MATCH CONTAINER --- XXX */
 
-/* ----- WINNER OVERLAY ----- */
+/* WINNER CSS  */
 
 .winner-overlay-container {
-    
     position: fixed;
     background-color: rgb(211, 146, 200);
     height: 100vh;
@@ -77,15 +70,8 @@
     align-items: center;
 }
 
-/* .winner-hamster-card {
-    display: flex;
-    padding: 1.5em;
-    max-height: 87vh;
-    flex-direction: column-reverse;
-    flex-wrap: nowrap;
-} */
 
-.winner-hamster-h1 {
+.winner-artist-h11 {
     color: rgb(37, 49, 59);
     font-family: var(--feature-font);
     font-size: 2em;
@@ -93,28 +79,16 @@
 }
 
 .winner-overlay-container .main-btn {
-    margin: 2em 0 1em 0;
+    height: min-content;
+    margin: -1em 0 0em 0;
+    padding: 2px;
+    margin: -18px;
+    width: 142px;
+
 }
 
+/*  WINNER   */
 
-.winner-overlay-container .hamster-card:hover {
-    transform: scale(1.0);
-}
-
-.winner-overlay-container .hamster-image {
-    max-height: 200px;
-    object-fit: cover;
-}
-
-.winner-overlay-container .show-winner-match {
-    background-color: none;
-}
-
-/* XXX --- WINNER OVERLAY --- XXX */
-
-/* ----- Responsive Design ------ */
-
-/* Bigger smartphones & tablets */
 .match-history {
     display: flex;
     align-items: center;
@@ -126,10 +100,85 @@
     font-weight: bolder;
 }
 
-.hamster-winner-image {
+.artist-winner-image {
     object-fit: cover;  
     border-radius: 50%;
     box-shadow: 4px 5px 10px 1px rgba(0, 0, 0, 0.11);
     height: 300px;
     width: 333px;
 }
+
+
+
+/* MOBIL VERSION */
+@media (max-width: 500px){
+  
+   /*  .hamster-match-container {
+        display: flex;
+    } */
+
+    .play-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        /* justify-content: space-around; */
+        /* margin-top: 4rem; */
+        gap: 0.7rem;
+        align-items: center;
+    }
+
+    .contestant-artist-img {
+        height: 150px;
+        width: 150px;
+        object-fit: cover;
+        border-radius: 50%;
+        box-shadow: 4px 5px 10px 1px rgb(0 0 0 / 11%);
+    }
+
+    .item-name {
+        font-size:medium;
+        margin: 0.5em;
+        margin-block-start: auto;
+    }
+
+    .artist-match-container .vs-string {
+        font-family: var(--feature-font);
+        font-size: 1.3em;
+    }
+    
+    .play-container .main-btn{
+        font-size: 0.7em;
+    border-radius: 1em;
+    padding: 0.5em 3em;
+    outline: none;
+    border: 1px solid rgb(31, 167, 177);
+    background-color: rgb(31, 167, 177);
+    color: white;
+    }
+
+    .gallery-title {
+    text-transform: uppercase;
+    color: rgb(24, 93, 98);
+    font-size: 3.5em;
+    margin-bottom: 2rem;
+}
+
+.greeting p {
+    font-weight: lighter;
+    font-size: 13px;
+    line-height: 0px;
+    text-align: center;
+}
+.nav-link a {
+    font-size: 13px;
+}
+.nav-link {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: .5em;
+}
+
+  }

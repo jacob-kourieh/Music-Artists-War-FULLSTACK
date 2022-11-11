@@ -1,8 +1,14 @@
+import { Link } from "react-router-dom";
+import startLogo from '../img/start-logo.png'
+
 function StartPage() {
     return (
-        <section>
-            <h1>Welcome to Music Artist War</h1>
-        </section>
+        <Link to="/play">
+            <section className="start-contaiener">
+                <img className="logo-img" src={startLogo} alt="start-logo" />
+                <h1>Music Artist War</h1>
+            </section>
+        </Link>
     )
 }
 

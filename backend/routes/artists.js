@@ -103,7 +103,7 @@ recordRoutes.route('/artist/delete/:id').delete(function (req, res) {
         })
 });
 
-//random  Ett slumpat hamsterobjekt
+//random  Ett slumpat artistobjekt
 recordRoutes.route('/artists/random').get(function (req, res) {
     let db_connect = dbo.getDb('artistsDB');
     let randomArtist = [];
@@ -114,12 +114,8 @@ recordRoutes.route('/artists/random').get(function (req, res) {
         .toArray(function (err, result) {
 
             allArtists = result;
-            //id på första hamstern
             let firstRandom = result[Math.floor(Math.random() * result.length)];
             randomArtist.push(firstRandom);
-            //ta bort hamstern från listkopian
-            //för att den inte ska råka komma med igen som motståndare
-            //spara båda hamstrarna i en lista som vi returnerar till frontenden
             allArtists = allArtists.filter((item) => item._id !== firstRandom._id);
             let secondRandom = allArtists[Math.floor(Math.random() * allArtists.length)];
             randomArtist.push(secondRandom);
@@ -144,6 +140,7 @@ recordRoutes.route("/artists/winners").get(async function (req, response) {
             response.json(bestWinners);
         });
 });
+
 
 // get BEST LOSERS
 recordRoutes.route("/artists/losers").get(async function (req, response) {
