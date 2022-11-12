@@ -22,12 +22,12 @@ function ShowWinner({ close, artist }) {
     return (
         <div className="winner-overlay-container">
             <article>
-                <h1 className="winner-artist-h1">You voted for</h1>
+                <h2 className="winner-artist-h2">You voted for</h2>
                 {
                     updatedData ?
                         <section>
                             <img className="artist-winner-image" src={artist.imgName} alt="hamster"  ></img>
-                            <h2>{artist.name}</h2>
+                            <h2 className="artist-winner-name">{artist.name}</h2>
                             <div className="match-history">
                                 <h4>Match history</h4>
                                 <span>Games: <span className="match-points"> {updatedData.games} </span></span>

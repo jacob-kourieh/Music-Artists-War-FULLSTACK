@@ -9,11 +9,11 @@ function ShowInfo({ close, artist }) {
                 <img className="overlay-artist-image" src={artist.imgName} alt="hamster"></img>
                 <div>
                     <div className="overlay-information-box">
-                        <h2>{artist.name} </h2>
+                        <h2>{artist.name}</h2>
                         <p> Age: {artist.age} years</p>
                         <p> nationality: {artist.nationality}</p>
                         <p> Genres: {artist.genres}</p>
-                        overlay-artist-image
+
                     </div>
                     <h3>Match history</h3>
                     <div className="match-history">

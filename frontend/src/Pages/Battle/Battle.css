@@ -71,18 +71,23 @@
 }
 
 
-.winner-artist-h11 {
+.winner-artist-h2 {
     color: rgb(37, 49, 59);
     font-family: var(--feature-font);
-    font-size: 2em;
+    font-size: 1.5em;
     margin: 0 0 0.4em 0;
+}
+
+
+.artist-winner-name {
+    margin: 0;
 }
 
 .winner-overlay-container .main-btn {
     height: min-content;
-    margin: -1em 0 0em 0;
+    margin: -1em 0 0 0;
     padding: 2px;
-    margin: -18px;
+    margin: 8px;
     width: 142px;
 
 }
@@ -94,7 +99,13 @@
     align-items: center;
     margin: 23px;
     flex-direction: column;
+    margin: 0;
 }
+
+.match-history h4 {
+    margin-bottom: 2px;
+}
+
 
 .match-points {
     font-weight: bolder;
@@ -148,13 +159,14 @@
     }
     
     .play-container .main-btn{
-        font-size: 0.7em;
+    font-size: 0.7em;
     border-radius: 1em;
     padding: 0.5em 3em;
     outline: none;
     border: 1px solid rgb(31, 167, 177);
     background-color: rgb(31, 167, 177);
     color: white;
+    width: 126px;
     }
 
     .gallery-title {

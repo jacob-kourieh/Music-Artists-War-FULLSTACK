@@ -9,6 +9,7 @@ function Gallery() {
 
     const [showOverlayItem, setShowOverlayItem] = useState(false)
 
+
     //Overlay sidan med stäng function
     let addArtistOverlay
     if (showOverlayItem) {
@@ -32,6 +33,9 @@ function Gallery() {
                     <Link to="/play"><button className="main-btn" >Play Agien</button></Link>
                 </article>
             </article>
+
+
+
 
             <article className="gallery-container">
                 <Artists />

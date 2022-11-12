@@ -5,7 +5,7 @@ function Footer() {
 
         <div className="footer">
             <p className='footer-text'>
-                MADE BY JACOB
+                MADE BY <span>JACOB</span>
             </p>
         </div>
     );

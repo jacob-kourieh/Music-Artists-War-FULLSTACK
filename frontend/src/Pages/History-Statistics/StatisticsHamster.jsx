@@ -28,7 +28,7 @@ function StatisticsHamster() {
     return (
         <section className="statistics-container">
             <li className="statistics-list-item">
-                <h3 className="stats-header-text">Top 5 Artists winners</h3>
+                <h3 className="stats-header-text">Top 5 winners</h3>
                 <article className="statistics-frame">
                     <ol className="statsic-cont">
                         {winners.map((artistWinner, i) => (
@@ -43,7 +43,7 @@ function StatisticsHamster() {
             </li>
 
             <li className="statistics-list-item">
-                <h3 className="stats-header-text">Top 5 Artists losers</h3>
+                <h3 className="stats-header-text">Top 5 losers</h3>
                 <article className="statistics-frame">
                     <ol className="statsic-cont">
                         {losers.map((artistLoser, i) => (
