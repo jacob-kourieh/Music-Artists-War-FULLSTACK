@@ -27,6 +27,7 @@ nav a {
     text-align: center
   }
 
+  
 .header {
     display: flex;
     flex-direction: row;
@@ -65,11 +66,27 @@ nav a {
 	justify-content: center;
 }
 
+
+
+
+
+
+          /* FOOTER */
 footer {
 	border-top: 2px solid rgb(214, 155, 206);
 	padding: 0.5em;
 	background-color: black;
 	color: white;
+}
+
+footer p {
+  margin: 10px 0;
+}
+
+footer a {
+  color: #3c97bf;
+  
+margin-right:5px;
 }
 
 .start-contaiener {
@@ -86,7 +103,7 @@ footer {
     margin-top: 0em;
     
 }
-a {
+ .link-start-page {
   text-decoration: none;
 }
 
@@ -100,6 +117,8 @@ a {
 
 .footer-text {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   text-align: center;
+  gap: 5px;
+  justify-content: center;
 }

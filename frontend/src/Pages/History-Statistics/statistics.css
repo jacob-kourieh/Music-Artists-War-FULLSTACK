@@ -50,3 +50,30 @@
 		grid-template-columns: auto;
 	}
 }
+
+
+.otline-winner {
+	border: solid 5px red;
+}
+.otline-winner2 {
+	border: solid 5px rgb(16, 8, 8);
+}
+
+
+
+.crown-img{
+	width: 180px;
+    height: 150;
+    position: relative;
+    bottom: -3em;
+    right: 3em;
+    transform: rotate(352deg);
+	/* visibility: hidden; */
+	display: none;
+}
+.crown-box{
+	display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+}

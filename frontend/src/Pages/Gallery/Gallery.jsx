@@ -37,7 +37,7 @@ function Gallery() {
 
 
 
-            <article className="gallery-container">
+            <article className="gallery-container ">
                 <Artists />
                 {addArtistOverlay}
             </article>

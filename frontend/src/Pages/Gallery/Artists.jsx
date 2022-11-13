@@ -4,7 +4,8 @@ import ShowInfo from './ShowInfo'
 import CircularProgress from '@mui/material/CircularProgress';
 import { baseURL } from '../../Utils/baseURL'
 import { BsFillTrashFill, BsFillArrowUpRightSquareFill } from 'react-icons/bs';
-import { AiOutlineSearch } from 'react-icons/ai';
+import Crown from '../../img/crown.png'
+//import { AiOutlineSearch } from 'react-icons/ai';
 
 
 
@@ -16,7 +17,7 @@ function Artists() {
     const [searchTerm, setSearchTerm] = useState("");
 
 
-    //get fetch för att hämta alla artister fåm backend
+    //get fetch för att hämta alla artister från backend
     function getArtists() {
         fetch(`${baseURL}/artists`)
             .then((response) => response.json())
@@ -40,16 +41,16 @@ function Artists() {
         );
     }
 
-    /*  const display = () => {
-         setArtists(artists)
-         window.location.reload();
-     }
-  */
+    const display = () => {
+        setArtists(artists)
+        window.location.reload();
+    }
+
 
     //Overlay sidan med stäng function
     let addArtistOverlay
     if (showAddArtistOverlay) {
-        const closeOverlay = () => { setShowAddArtistOverlay(false); getArtists() }
+        const closeOverlay = () => { setShowAddArtistOverlay(false); display() }
         addArtistOverlay = <ShowInfo close={closeOverlay} artist={artists} />
     }
 
@@ -62,12 +63,13 @@ function Artists() {
     }
 
 
+
     return (
-        <section className='big-gallry-cont'>
+        <section /* className='big-gallry-cont' */>
 
             <div className="search-box">
-                <button className="btn-search">   <AiOutlineSearch />  </button>
-                <input type="text" className="input-search" placeholder="Search Artist /Nationality /Genres"
+                {/* <button className="btn-search">   <AiOutlineSearch />  </button> */}
+                <input type="search" autocomplete="off" className="input-search" placeholder="Search Artist /Nationality /Genres"
                     onChange={(event) => {
                         setSearchTerm(event.target.value)
                     }}
@@ -83,15 +85,26 @@ function Artists() {
                         value.nationality.toLowerCase().includes(searchTerm.toLowerCase()) ||
                         value.genres.toLowerCase().includes(searchTerm.toLowerCase())) {
                         return value
+
                     }
+
 
                 }).map((artist, i) => {
                     return (
-                        <article key={i} className="hamster-gridcard">
-                            <img
-                                onClick={() => { handleShowMore(artist) }}
-                                className="artist-image" src={artist.imgName} alt="artist" >
-                            </img>
+
+                        <article key={i} className="hamster-gridcard ">
+
+                            <div className='crown-box'>
+                                <img src={Crown} alt="crown" className='crown-img' />
+                                <img
+                                    onClick={() => { handleShowMore(artist) }}
+                                    src={artist.imgName} alt="artist"
+                                    className={`artist-image  ${artist.wins >= 100 ? "otline-winner" : (artist.wins >= 500 ? "otline-winner2" : "artist-image")}`} >
+                                </img>
+                            </div>
+                            {/*  <div className='crown-img'></div> */}
+
+
                             <h2 className='artist-centertext'>{artist.name}</h2>
 
 
@@ -101,6 +114,7 @@ function Artists() {
 
                             </article>
                         </article>
+
 
                     );
 

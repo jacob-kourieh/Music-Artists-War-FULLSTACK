@@ -25,6 +25,13 @@ function StatisticsHamster() {
         getLosers();
     }, []);
 
+
+    function topp() {
+        if (winners.wins >= 13) {
+
+        }
+    }
+
     return (
         <section className="statistics-container">
             <li className="statistics-list-item">
@@ -33,7 +40,12 @@ function StatisticsHamster() {
                     <ol className="statsic-cont">
                         {winners.map((artistWinner, i) => (
                             <dl key={i}>
-                                <dt>  <img src={artistWinner.imgName} className="statistics-image" alt="winner artist" /></dt>
+                                {/* className={"btn-group pull-right " + (this.props.showBulkActions ? 'show' : 'hidden')} */}
+                                {/* {artistWinner.wins >= 12 ? "classname":"statistics-image" : "classname":"otline-winner"} */}
+
+                                <dt> <img src={artistWinner.imgName} className={`statistics-image  ${artistWinner.wins >= 100 ? "otline-winner" : (artistWinner.wins >= 500 ? "otline-winner2" : "statistics-image")}`}
+
+                                    alt="winner artist" /></dt>
                                 <h2 className="stats-item-name"> {artistWinner.name}</h2>
                                 <dt> {artistWinner.wins} times wins </dt>
                             </dl>
