@@ -182,15 +182,16 @@
     line-height: 0px;
     text-align: center;
 }
-.nav-link a {
-    font-size: 13px;
-}
+
 .nav-link {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     flex-wrap: wrap;
-    gap: .5em;
+    margin-right: 1em
+}
+.greeting {
+    margin-left: -1em;
 }
 
   }

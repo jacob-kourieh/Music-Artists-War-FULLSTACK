@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { baseURL } from '../../Utils/baseURL'
 import "../History-Statistics/statistics.css"
 
-function StatisticsHamster() {
+function Statistics() {
     const [winners, setWinners] = useState([]);
     const [losers, setLosers] = useState([]);
 
@@ -73,4 +73,4 @@ function StatisticsHamster() {
     );
 }
 
-export default StatisticsHamster;
+export default Statistics;
