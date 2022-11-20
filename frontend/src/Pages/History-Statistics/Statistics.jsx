@@ -47,7 +47,7 @@ function Statistics() {
 
                                     alt="winner artist" /></dt>
                                 <h2 className="stats-item-name"> {artistWinner.name}</h2>
-                                <dt> {artistWinner.wins} times wins </dt>
+                                <dt> <span className="statistic-num-result">{artistWinner.wins}</span> times wins </dt>
                             </dl>
                         ))}
                     </ol>
@@ -62,7 +62,7 @@ function Statistics() {
                             <dl key={i} >
                                 <dt> <img src={artistLoser.imgName} className="statistics-image" alt="loser artist" /></dt>
                                 <h2 className="stats-item-name">{artistLoser.name}</h2>
-                                <dt>{artistLoser.defeats} times defeats</dt>
+                                <dt> <span className="statistic-num-result">{artistLoser.defeats}</span> times defeats</dt>
                             </dl>
                         ))}
                     </ol>

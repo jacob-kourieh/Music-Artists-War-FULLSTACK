@@ -35,12 +35,8 @@ body{
 :root {
   /* Colors */
 
-  --orange: #EE9B00;
-  --muddy-yellow: #E9D8A6;
-  --mint: #94D2BD;
-  --light-blue: #0A9396;
-  --deep-sea: #005F73;
-  --darkest: #001219;
+ 
+
 
   /* Fonts */
   --feature-font: 'Slackey', cursive; 
@@ -92,8 +88,8 @@ main {
 	border-radius: 1em;
 	padding: 0.5em 1em;
 	outline: none;
-	border: 1px solid rgb(31, 167, 177);
-    background-color: rgb(31, 167, 177);
+	border: 1px solid #12484b;
+    background-color: #12484b;
     color: white;
 }
 
@@ -148,7 +144,7 @@ main {
   outline: none;
   border-radius: 25px;
   transition: all .5s ease-in-out;
-  background-color: #22a6b3;
+  background-color: #12484b;;
   /* padding-right: 40px; */
   color: #fff;
 }

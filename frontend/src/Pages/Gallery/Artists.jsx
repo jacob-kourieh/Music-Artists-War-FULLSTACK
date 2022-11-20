@@ -76,7 +76,7 @@ function Artists() {
                 />
             </div>
 
-            <section className="play-container">
+            <section className="play-container play-container-mobil">
                 {artists.length > 0 && artists.length ? [...artists].reverse().filter((value) => {
                     if (searchTerm === "") {
                         return value
@@ -109,8 +109,8 @@ function Artists() {
 
 
                             <article className='btn-grup'>
-                                <span onClick={() => { deleteArtists(artist._id) }} > <BsFillTrashFill fontSize="1.5em" style={{ fill: '#ffffffa6', cursor: 'pointer' }} /> </span>
-                                <span onClick={() => { handleShowMore(artist) }} > <BsFillArrowUpRightSquareFill fontSize="1.5em" style={{ fill: '#ffffffa6', cursor: 'pointer' }} /> </span>
+                                <span onClick={() => { deleteArtists(artist._id) }} > <BsFillTrashFill fontSize="1.5em" style={{ fill: '#12484b', cursor: 'pointer' }} /> </span>
+                                <span onClick={() => { handleShowMore(artist) }} > <BsFillArrowUpRightSquareFill fontSize="1.5em" style={{ fill: '#12484b', cursor: 'pointer' }} /> </span>
 
                             </article>
                         </article>

@@ -15,6 +15,7 @@
 .artist-match-container .vs-string {
     font-family: var(--feature-font);
     font-size: 4em;
+    color: #12484b;;
 }
 
 .artist-match-card {
@@ -135,10 +136,20 @@
         justify-content: center;
         /* justify-content: space-around; */
         /* margin-top: 4rem; */
-        gap: 0.7rem;
+        gap: 1rem;
         align-items: center;
     }
 
+    .play-container-mobil {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        /* justify-content: space-around; */
+        /* margin-top: 4rem; */
+        gap: 4rem;
+        align-items: center;
+    }
     .contestant-artist-img {
         height: 150px;
         width: 150px;
@@ -163,8 +174,8 @@
     border-radius: 1em;
     padding: 0.5em 3em;
     outline: none;
-    border: 1px solid rgb(31, 167, 177);
-    background-color: rgb(31, 167, 177);
+    border: 1px solid #12484b;
+    background-color: #12484b;
     color: white;
     width: 126px;
     }

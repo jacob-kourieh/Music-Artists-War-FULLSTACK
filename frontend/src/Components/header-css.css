@@ -102,7 +102,7 @@ nav a {
 }
 
 .nav-link:hover {
-	color: #212526;;
+	color: rgb(150 245 141);
 }
 
 .nav-icon {
@@ -155,7 +155,7 @@ nav a {
     font-weight: lighter;
     font-size: 100px;
     text-align: center;
-    color: rgb(24, 93, 98);
+    color: rgb(150 245 141);
   }
   .greeting p {
     
@@ -170,18 +170,18 @@ nav a {
 
           /* FOOTER */
 footer {
-	border-top: 2px solid rgb(214, 155, 206);
+	
 	padding: 0.5em;
-	background-color: black;
-	color: white;
+	background: linear-gradient(268deg, rgb(24, 93, 98), rgb(8, 31, 32));
 }
 
 footer p {
   margin: 10px 0;
+  color: white;
 }
 
 footer a {
-  color: #3c97bf;
+  color: rgb(150 245 141);
   
 margin-right:5px;
 }
@@ -197,7 +197,7 @@ margin-right:5px;
   justify-content: center;
 }
 .start-contaiener h1 {
-  color: #4fbe45cc;
+  color: #12484b;
   font-family: var(--feature-font);
   font-size: xx-large;
     margin-top: 0em;

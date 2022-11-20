@@ -8,7 +8,7 @@
 
 .gallery-title {
     text-transform: uppercase;
-    color:  rgb(24, 93, 98);
+    color:  rgb(150 245 141);
     font-size: 3.5em;
     margin-bottom: 2rem;
     
@@ -28,10 +28,11 @@
 .gallery-header p {
     max-width: 30em;
     text-align: center;
-    color: rgb(24, 93, 98);
+    color: black;
     line-height: 1.7em;
-    font-weight: 300;
-    margin-bottom: 8rem;
+    padding: 1em;
+    margin-bottom: 4rem;
+    font-size: medium;
 }
 
 /* .gallery-header button { 
