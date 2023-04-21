@@ -41,25 +41,28 @@ function Artists() {
         );
     }
 
-    const display = () => {
+    const display = (e) => {
         setArtists(artists)
         window.location.reload();
+
     }
 
 
     //Overlay sidan med stäng function
     let addArtistOverlay
     if (showAddArtistOverlay) {
-        const closeOverlay = () => { setShowAddArtistOverlay(false); display() }
+        const closeOverlay = () => { setShowAddArtistOverlay(false); display(); }
         addArtistOverlay = <ShowInfo close={closeOverlay} artist={artists} />
     }
 
 
 
-    const handleShowMore = (star) => {
+    const handleShowMore = (star, e) => {
         console.log('you clicked', star)
         setShowAddArtistOverlay(true)
         setArtists(star)
+        //e.target.reset();
+
     }
 
 
@@ -72,6 +75,7 @@ function Artists() {
                 <input type="search" autocomplete="off" className="input-search" placeholder="Search Artist /Nationality /Genres"
                     onChange={(event) => {
                         setSearchTerm(event.target.value)
+
                     }}
                 />
             </div>
@@ -80,6 +84,7 @@ function Artists() {
                 {artists.length > 0 && artists.length ? [...artists].reverse().filter((value) => {
                     if (searchTerm === "") {
                         return value
+
                     }
                     else if (value.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                         value.nationality.toLowerCase().includes(searchTerm.toLowerCase()) ||

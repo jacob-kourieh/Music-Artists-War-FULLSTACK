@@ -8,7 +8,7 @@ app.use(express.json());
 
 app.use(require('./routes/artists'));
 app.use(require('./routes/matches'));
-
+app.use(require('./routes/randomSong'));
 
 const dbo = require('./db/connect');
 
