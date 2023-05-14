@@ -10,7 +10,7 @@ import Play from './Pages/Battle/Play';
 import ShowInfo from './Pages/Gallery/ShowInfo';
 import Footer from './Components/Footer';
 import Statistics from './Pages/History-Statistics/Statistics';
-import RandomSong from './Pages/RandomSong/RandomSong';
+// import RandomSong from './Pages/RandomSong/RandomSong';
 
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
           <Routes>
             <Route path='/' element={<StartPage />} />
             <Route path='/battle' element={<Battle />} />
-            <Route path='/randomsong' element={<RandomSong />} />
+            {/* <Route path='/randomsong' element={<RandomSong />} /> */}
             <Route path='/gallery' element={<Gallery />} />
             <Route path='/Statistics' element={<Statistics />} />
             <Route path='/history' element={<History />} />

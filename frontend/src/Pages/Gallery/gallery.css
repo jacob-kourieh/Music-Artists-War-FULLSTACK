@@ -1,4 +1,19 @@
 /* ----- Gallery ----- */
+
+.play-container-artists {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-content: space-around;
+
+    gap: 4rem;
+    align-items: center;
+    overflow-y: hidden;
+
+}
+
+
 .gallery-header {
     display: flex;
     flex-direction: column;

@@ -8,13 +8,12 @@ import Crown from '../../img/crown.png'
 //import { AiOutlineSearch } from 'react-icons/ai';
 
 
-
-
 function Artists() {
 
     const [showAddArtistOverlay, setShowAddArtistOverlay] = useState(false)
     const [artists, setArtists] = useState([])
     const [searchTerm, setSearchTerm] = useState("");
+    const [selectedArtist, setSelectedArtist] = useState(null)
 
 
     //get fetch för att hämta alla artister från backend
@@ -29,76 +28,61 @@ function Artists() {
 
     //Fetsh för ta bort artist från Apiet
     async function deleteArtists(id) {
-        const response = await fetch(
-            `${baseURL}/artist/delete/` + id,
-            {
-                method: "DELETE",
-            }
-        );
-        const data = await response.text();
-        setArtists((artists) =>
-            artists.filter((artists) => artists._id !== id)
-        );
-    }
-
-    const display = (e) => {
-        setArtists(artists)
-        window.location.reload();
-
+        if (window.confirm("Are you sure you want to delete this artist?")) {
+            const response = await fetch(
+                `${baseURL}/artist/delete/` + id,
+                {
+                    method: "DELETE",
+                }
+            );
+            const data = await response.text();
+            setArtists((artists) =>
+                artists.filter((artists) => artists._id !== id)
+            );
+            getArtists();
+        }
     }
 
 
     //Overlay sidan med stäng function
     let addArtistOverlay
-    if (showAddArtistOverlay) {
-        const closeOverlay = () => { setShowAddArtistOverlay(false); display(); }
-        addArtistOverlay = <ShowInfo close={closeOverlay} artist={artists} />
+    if (showAddArtistOverlay && selectedArtist) {
+        const closeOverlay = () => {
+            setShowAddArtistOverlay(false);
+            getArtists();
+        }
+        addArtistOverlay = <ShowInfo close={closeOverlay} artist={selectedArtist} />
     }
 
-
-
-    const handleShowMore = (star, e) => {
-        console.log('you clicked', star)
+    const handleShowMore = (artist, e) => {
         setShowAddArtistOverlay(true)
-        setArtists(star)
-        //e.target.reset();
-
+        setSelectedArtist(artist)
     }
 
-
+    const filteredArtists = [...artists].reverse().filter((value) => {
+        if (searchTerm === "") {
+            return value
+        } else if (value.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            value.nationality.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            value.genres.toLowerCase().includes(searchTerm.toLowerCase())) {
+            return value
+        }
+    });
 
     return (
-        <section /* className='big-gallry-cont' */>
-
+        <section>
             <div className="search-box">
-                {/* <button className="btn-search">   <AiOutlineSearch />  </button> */}
                 <input type="search" autocomplete="off" className="input-search" placeholder="Search Artist /Nationality /Genres"
                     onChange={(event) => {
                         setSearchTerm(event.target.value)
-
                     }}
                 />
             </div>
 
-            <section className="play-container play-container-mobil">
-                {artists.length > 0 && artists.length ? [...artists].reverse().filter((value) => {
-                    if (searchTerm === "") {
-                        return value
-
-                    }
-                    else if (value.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                        value.nationality.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                        value.genres.toLowerCase().includes(searchTerm.toLowerCase())) {
-                        return value
-
-                    }
-
-
-                }).map((artist, i) => {
+            <section className="play-container-artists play-container-mobil">
+                {artists.length > 0 ? filteredArtists.length > 0 ? filteredArtists.map((artist, i) => {
                     return (
-
                         <article key={i} className="hamster-gridcard ">
-
                             <div className='crown-box'>
                                 <img src={Crown} alt="crown" className='crown-img' />
                                 <img
@@ -107,34 +91,20 @@ function Artists() {
                                     className={`artist-image  ${artist.wins >= 100 ? "otline-winner" : (artist.wins >= 500 ? "otline-winner2" : "artist-image")}`} >
                                 </img>
                             </div>
-                            {/*  <div className='crown-img'></div> */}
-
 
                             <h2 className='artist-centertext'>{artist.name}</h2>
-
-
                             <article className='btn-grup'>
                                 <span onClick={() => { deleteArtists(artist._id) }} > <BsFillTrashFill fontSize="1.5em" style={{ fill: '#12484b', cursor: 'pointer' }} /> </span>
                                 <span onClick={() => { handleShowMore(artist) }} > <BsFillArrowUpRightSquareFill fontSize="1.5em" style={{ fill: '#12484b', cursor: 'pointer' }} /> </span>
-
                             </article>
                         </article>
-
-
                     );
-
-                }) : <CircularProgress />
-
+                }) : <p>Can't find any artist matching your search ...</p> : <CircularProgress />
                 }
                 {addArtistOverlay}
-
-
-
-
             </section>
         </section>
     )
-
 }
 
 

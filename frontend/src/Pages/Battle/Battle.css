@@ -1,7 +1,7 @@
 
 .play-match-container  {
     text-align: center;
-    min-height: 60em;
+    /* min-height: 60em; */
     /* margin-top: 2em; */
 }
 
@@ -46,7 +46,7 @@
     flex-wrap: wrap;
     justify-content: center;
     justify-content: space-around;
-    margin-top: 4rem;
+    margin-top: -4rem;
     gap: 4rem;
     align-items: center;
     overflow-y: hidden;

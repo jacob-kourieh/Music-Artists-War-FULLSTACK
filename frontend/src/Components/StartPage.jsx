@@ -11,12 +11,12 @@ function StartPage() {
                 </section>
             </Link>
 
-            <Link to="/randomsong" className="link-start-page">
+            {/* <Link to="/randomsong" className="link-start-page">
                 <section className="start-contaiener">
                     <img className="logo-img" src={startLogo} alt="start-logo" />
                     <h1>RANDOM SONG</h1>
                 </section>
-            </Link>
+            </Link> */}
         </div>
 
     )

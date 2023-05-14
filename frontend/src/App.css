@@ -7,13 +7,7 @@
   box-sizing: border-box;
 }
 
-/* *{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: var(--open-sans);
-  color: var(--darkest);
-} */
+
 
 
 
@@ -24,14 +18,7 @@ body{
   max-width: 100vw;
 }
 
-/* body{
-  margin: 0px;
-  padding: 0px;
-  width: 100vw;
-  height: 100vh;
-}
 
- */
 :root {
   /* Colors */
 
@@ -51,38 +38,15 @@ body{
 
 
 
-/* .main-btn {
-  background-color: var(--orange); 
-  color: var(--darkest);
-  border: none;
-  border-radius: 4em;
-  min-width: 60%;
-  padding: 1em;
-  font-size: 1em;
-  font-weight: 800;
-  text-transform: uppercase;
-  cursor: pointer;
-}
 
-.main-btn:hover {
-  background-color: var(--dark-orange);
-  transition: var(--transition-hover);
-  color: var(--muddy-yellow);
-  transform: var(--scale-hover)
-} */
 
-/* .App {
-  
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
- */
+
 main {
-  min-height: 100vh;
+  min-height: 84vh;
 	flex: 1 1 auto;
 	background: linear-gradient(-134deg, #E4A972, #9941D8) fixed;
 }
+
 .main-btn {
 	font-size: 1.2em;
 	border-radius: 1em;
@@ -100,24 +64,7 @@ main {
 	color: rgb(31, 167, 177);
 }
 
-/* XXX --- Nav --- XXX */
 
-/* Iphone X and smaller */
-/* @media screen and (max-width: 440px) {
-
-  .App {
-    padding-left: 1em;
-    padding-right: 1em;
-  }
-
-  .App nav {
-    padding-left: 1em;
-  }
-
-
-
-
-} */
 
 
 
@@ -157,22 +104,6 @@ main {
 }
 
 
-/* .btn-search{
-  width: 50px;
-
-  border-style: none;
-  font-size: 25px;
-  font-weight: bold;
-  outline: none;
-  cursor: pointer;
-  border-radius: 50%;
-
-  right: 46px;
-  color: #ffffff;
-  background-color: transparent;
-  pointer-events: painted;
-  position: relative;  
-} */
 .btn-search:focus ~ .input-search{
   width: 200px;
   border-radius: 0px;

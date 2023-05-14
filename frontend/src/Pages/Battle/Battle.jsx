@@ -5,8 +5,10 @@ import "./Battle.css"
 import CircularProgress from '@mui/material/CircularProgress';
 
 
+
 function Battle() {
     const [artists, setArtists] = useState([])
+    const [loading, setLoading] = useState(true)
 
     let [winner, setWinner] = useState([])
     let [loser, setLoser] = useState([])
@@ -19,7 +21,10 @@ function Battle() {
     const getRandomArtists = () => {
         fetch(`${baseURL}/artists/random`)
             .then(res => res.json())
-            .then(data => setArtists(data))
+            .then(data => {
+                setArtists(data)
+                setLoading(false)
+            })
     }
 
     useEffect(() => {
@@ -28,6 +33,7 @@ function Battle() {
 
 
     const newGame = () => {
+        setLoading(true)
         getRandomArtists(setArtists)
         setWinner()
         setLoser()
@@ -98,24 +104,32 @@ function Battle() {
 
     return (
         <div className="play-container">
-            {artists ? artists.map((artist, i) => (
-                <article key={i} className=" artist-match-card">
-                    <div >
-                        <img alt="artist" src={artist.imgName} className="contestant-artist-img"></img>
-                        <h2 className='item-name'>{artist.name}</h2>
-                    </div>
-                    <div>
-                        <button
-                            className="main-btn vote-btn"
-                            onClick={() => { handleCutestClick(artist, artists?.filter(art => art !== artist)[0]) }}>
-                            Vote
-                        </button>
-                    </div>
-                </article>
-            )) : <CircularProgress />
-            }
-            <h1 className="vs-string"> VS.</h1>
-            {addHamsterOverlay}
+            {loading ? (
+                <div style={{ textAlign: 'center' }}>
+                    <CircularProgress />
+                    <p>Please wait to load the artists game from API...</p>
+                </div>
+            ) : (
+                <>
+                    {artists.map((artist, i) => (
+                        <article key={i} className=" artist-match-card">
+                            <div>
+                                <img alt="artist" src={artist.imgName} className="contestant-artist-img"></img>
+                                <h2 className='item-name'>{artist.name}</h2>
+                            </div>
+                            <div>
+                                <button
+                                    className="main-btn vote-btn"
+                                    onClick={() => { handleCutestClick(artist, artists.filter(art => art !== artist)[0]) }}>
+                                    Vote
+                                </button>
+                            </div>
+                        </article>
+                    ))}
+                    <h1 className="vs-string"> VS.</h1>
+                </>
+            )}
+            {showAddArtistOverlay && addHamsterOverlay}
         </div>
     )
 }

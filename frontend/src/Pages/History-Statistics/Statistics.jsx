@@ -2,22 +2,27 @@ import React from "react"
 import { useEffect, useState } from "react";
 import { baseURL } from '../../Utils/baseURL'
 import "../History-Statistics/statistics.css"
+import CircularProgress from '@mui/material/CircularProgress';
 
 function Statistics() {
     const [winners, setWinners] = useState([]);
     const [losers, setLosers] = useState([]);
+    const [loadingWinners, setLoadingWinners] = useState(true);
+    const [loadingLosers, setLoadingLosers] = useState(true);
 
 
     //Fetch för hämsta atister winner top 5 
     async function getWinners() {
         const response = await fetch(`${baseURL}/artists/winners`);
         setWinners(await response.json());
+        setLoadingWinners(false);
     }
 
     //Fetch för hämsta atister loser top 5 
     async function getLosers() {
         const response = await fetch(`${baseURL}/artists/losers`);
         setLosers(await response.json());
+        setLoadingLosers(false);
     }
 
     useEffect(() => {
@@ -38,7 +43,7 @@ function Statistics() {
                 <h3 className="stats-header-text">Top 5 winners</h3>
                 <article className="statistics-frame">
                     <ol className="statsic-cont">
-                        {winners.map((artistWinner, i) => (
+                        {loadingWinners ? <CircularProgress /> : winners.map((artistWinner, i) => (
                             <dl key={i}>
                                 {/* className={"btn-group pull-right " + (this.props.showBulkActions ? 'show' : 'hidden')} */}
                                 {/* {artistWinner.wins >= 12 ? "classname":"statistics-image" : "classname":"otline-winner"} */}
@@ -58,7 +63,7 @@ function Statistics() {
                 <h3 className="stats-header-text">Top 5 losers</h3>
                 <article className="statistics-frame">
                     <ol className="statsic-cont">
-                        {losers.map((artistLoser, i) => (
+                        {loadingLosers ? <CircularProgress /> : losers.map((artistLoser, i) => (
                             <dl key={i} >
                                 <dt> <img src={artistLoser.imgName} className="statistics-image" alt="loser artist" /></dt>
                                 <h2 className="stats-item-name">{artistLoser.name}</h2>

@@ -35,7 +35,7 @@ router.get('/api/randomsong', async (req, res) => {
 
 async function requestValidSong(genreId = null) {
     const searchUrl = `https://api.deezer.com/genre/${genreId}/artists`;
-    const corsProxy = "https://api.allorigins.win/raw?url=";
+    const corsProxy = "https://jacob-website-jacob-kourieh.vercel.app/api/cors-proxy?url=";
 
     const response = await fetch(`${corsProxy}${searchUrl}`);
     const data = await response.json();

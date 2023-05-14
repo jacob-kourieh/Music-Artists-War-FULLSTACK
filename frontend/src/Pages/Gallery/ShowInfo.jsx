@@ -11,7 +11,7 @@ function ShowInfo({ close, artist }) {
                     <div className="overlay-information-box">
                         <h2>{artist.name}</h2>
                         <p> Age: {artist.age} years</p>
-                        <p> nationality: {artist.nationality}</p>
+                        <p> Nationality: {artist.nationality}</p>
                         <p> Genres: {artist.genres}</p>
 
                     </div>
