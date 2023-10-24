@@ -1,6 +1,5 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
-import "../History-Statistics/history.css"
 import CircularProgress from '@mui/material/CircularProgress';
 import { FaSadCry } from 'react-icons/fa';
 import { baseURL } from '../../Utils/baseURL'
@@ -51,13 +50,13 @@ const History = () => {
     return (
         <div >
             <article className="gallery-header">
-                <h1 className="gallery-title"> MATCHES HISTORY</h1>
+                <h1 className="gallery-title margin-tittle"> MATCHES HISTORY</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur obcaecati cum quasi mollitia sapiente? Fuga asperiores autem perspiciatis tempora corrupti. Neque molestias, debitis alias dolorum a suscipit reprehenderit necessitatibus tempora!</p>
                 <article className="btn-container">
                 </article>
             </article>
             <section >
-                <div className='history-Container'>
+                <div className='history-container'>
                     {matches ? matches.map(match => {
                         if (!getArtists) return 'Todo'
 
@@ -68,20 +67,20 @@ const History = () => {
                         if (!loser) return <div className="onematch"> <button onClick={() => deleteAMatch(match)}>DELETE MATCH</button></div>
 
                         if (!loser) return 'There ane no losers'
-                        return <section className='mastch-wrapper'>
+                        return <section className='match-wrapper'>
                             <section className="match-items">
 
                                 <div className="winner-history" key={match.winner}>
                                     <GiPodiumWinner fontSize="2em" style={{ fill: '#207a81' }} />
                                     <h3 className='winner-text'>THE WINNER</h3>
-                                    <img src={`${winner.imgName}`} alt="Bild på hamster" className="history-image" />
+                                    <img src={`${winner.imgName}`} alt="winner" className="history-image" />
                                     <h2 className='item-name'>{winner.name}</h2>
                                 </div>
 
                                 <div className="loser-history" key={match.loser}>
                                     < FaSadCry fontSize="2em" style={{ fill: '#207a81' }} />
                                     <h3 className='loser-text'>THE LOSER</h3>
-                                    <img src={`${loser.imgName}`} alt="Bild på hamster" className="history-image" />
+                                    <img src={`${loser.imgName}`} alt="loser" className="history-image" />
                                     <h2 className='item-name'>{loser.name}</h2>
                                 </div>
 

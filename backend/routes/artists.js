@@ -2,12 +2,16 @@ const express = require('express');
 
 const recordRoutes = express.Router();
 
+const { v4: uuidv4 } = require('uuid');
+
 // connect to db
 const dbo = require('../db/connect');
 
 // Detta hjälper att konvertera vårt id från en 
 // sträng till ett objekt-id (_id)
 const ObjectId = require('mongodb').ObjectId;
+
+const verifyToken = require('./verifyToken');
 
 // här skall vi få en lista över våra records
 recordRoutes.route('/artists').get(function (req, res) {
@@ -156,5 +160,28 @@ recordRoutes.route("/artists/losers").get(async function (req, response) {
             response.json(bestLosers);
         });
 });
+
+
+recordRoutes.route('/game').post(verifyToken, function (req, response) {
+    let db_connect = dbo.getDb();
+    let myquery = { _id: ObjectId(req.user._id) };
+    let newGameData = {
+        gameId: uuidv4(),
+        chosenArtistName: req.body.chosenArtistName,
+        loserArtistName: req.body.loserArtistName,
+    };
+    db_connect.collection('users').updateOne(
+        myquery,
+        { $push: { gameData: newGameData } },
+        function (err, res) {
+            if (err) {
+                response.status(400).json('Unable to save game data')
+            }
+            else {
+                response.status(200).json('Game data saved successfully')
+            }
+        });
+});
+
 
 module.exports = recordRoutes;

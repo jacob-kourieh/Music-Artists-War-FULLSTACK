@@ -1,4 +1,4 @@
-import "../Gallery/gallery.css"
+
 function ShowInfo({ close, artist }) {
 
     //visa artist info kortet via porpsen (artist)
@@ -6,7 +6,7 @@ function ShowInfo({ close, artist }) {
     return (
         <div className="overlay artist-overlay">
             <div className="artist-overlay-dialog">
-                <img className="overlay-artist-image" src={artist.imgName} alt="hamster"></img>
+                <img className="overlay-artist-image" src={artist.imgName} alt="artistImage"></img>
                 <div>
                     <div className="overlay-information-box">
                         <h2>{artist.name}</h2>

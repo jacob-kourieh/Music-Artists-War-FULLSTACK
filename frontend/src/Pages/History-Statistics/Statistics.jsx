@@ -1,7 +1,6 @@
 import React from "react"
 import { useEffect, useState } from "react";
 import { baseURL } from '../../Utils/baseURL'
-import "../History-Statistics/statistics.css"
 import CircularProgress from '@mui/material/CircularProgress';
 
 function Statistics() {

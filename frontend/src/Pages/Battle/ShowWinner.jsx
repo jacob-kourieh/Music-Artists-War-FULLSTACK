@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react"
-import "./Battle.css"
 import { baseURL } from '../../Utils/baseURL'
 import CircularProgress from '@mui/material/CircularProgress';
+import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
+import axios from "axios";
 
 function ShowWinner({ close, artist }) {
     const [updatedData, setUpdatedData] = useState([])
+    const [isFavorite, setIsFavorite] = useState(false)
 
     //Hämtar artist vinnaren med hjälp av _id genom fetchen
     useEffect(() => {
@@ -14,10 +16,41 @@ function ShowWinner({ close, artist }) {
             })
             let data = await response.json()
             setUpdatedData(data)
+
+            if (localStorage.getItem('token')) {
+                const username = localStorage.getItem('username');
+                const token = localStorage.getItem('token');
+
+                const profileResponse = await axios.get(`${baseURL}/api/user/profile/${username}`,
+                    { headers: { 'auth-token': token } }
+                );
+
+                if (profileResponse.status === 200) {
+                    const favoriteArtistIds = profileResponse.data.favoriteArtists.map(artist => artist._id);
+                    setIsFavorite(favoriteArtistIds.includes(artist._id));
+                }
+            }
         }
         updatedWinner()
     }, [])
 
+
+    async function handleFavoriteClick(artist) {
+        const token = localStorage.getItem('token');
+        const username = localStorage.getItem('username');
+        try {
+            const response = await axios.post(`${baseURL}/api/user/profile/updateFavoriteArtists`,
+                { username, artistId: artist._id, action: isFavorite ? 'remove' : 'add' },
+                { headers: { 'auth-token': token } }
+            );
+            if (response.status === 200) {
+                console.log('Favorites updated successfully');
+                setIsFavorite(!isFavorite);
+            }
+        } catch (error) {
+            console.error('Failed to update favorite artists.', error);
+        }
+    }
 
     return (
         <div className="winner-overlay-container">
@@ -26,7 +59,11 @@ function ShowWinner({ close, artist }) {
                 {
                     updatedData ?
                         <section>
-                            <img className="artist-winner-image" src={artist.imgName} alt="hamster"  ></img>
+                            <div style={{ position: "relative" }}>
+                                <img className="artist-winner-image" src={artist.imgName} alt="artistImage"></img>
+                                {localStorage.getItem('token') && <FavoriteOutlinedIcon className={`favorite-icon ${isFavorite ? 'active' : ''}`} sx={{ fontSize: 55 }} onClick={() => handleFavoriteClick(updatedData)} />}
+
+                            </div>
                             <h2 className="artist-winner-name">{artist.name}</h2>
                             <div className="match-history">
                                 <h4>Match history</h4>

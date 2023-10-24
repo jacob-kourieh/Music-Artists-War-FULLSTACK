@@ -14,9 +14,6 @@ function Header() {
         setOpen(false);
     };
 
-
-
-
     return (
 
         <nav className="navbar">
@@ -54,6 +51,16 @@ function Header() {
                 <li className="nav-item">
                     <Link to="/history" className="nav-link" onClick={closeMenu}>
                         History
+                    </Link>
+                </li>
+                <li className="nav-item">
+                    <Link to="/dashboard" className="nav-link" onClick={closeMenu}>
+                        Dashboard
+                    </Link>
+                </li>
+                <li className="nav-item">
+                    <Link to="/randomsong" className="nav-link" onClick={closeMenu}>
+                        Music
                     </Link>
                 </li>
             </ul>

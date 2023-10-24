@@ -1,9 +1,7 @@
 import { useEffect, useState } from 'react'
 import ShowWinner from './ShowWinner'
 import { baseURL } from '../../Utils/baseURL'
-import "./Battle.css"
 import CircularProgress from '@mui/material/CircularProgress';
-
 
 
 function Battle() {
@@ -15,6 +13,9 @@ function Battle() {
     const [match, setMatch] = useState([])
 
     const [showAddArtistOverlay, setShowAddArtistOverlay] = useState(false)
+
+    const [favoriteArtists, setFavoriteArtists] = useState([]);
+
 
 
     //get random på 2 st artister genom fetch
@@ -90,15 +91,39 @@ function Battle() {
         await updateWinner(win)
         await updateLoser(lose)
         await postMatch(win, lose)
+
+        // new code to save match data
+        const token = localStorage.getItem('token');
+
+        if (token) {
+            await fetch(`${baseURL}/game`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'auth-token': token
+                },
+                body: JSON.stringify({
+                    gameId: match._id,
+                    chosenArtistName: win.name,
+                    loserArtistName: lose.name
+                })
+            });
+        }
+
         setShowAddArtistOverlay(true)
     }
 
 
+
     //Winner artist Overlay sidan
-    let addHamsterOverlay
+    let addArtistOverlay
     if (showAddArtistOverlay) {
         const closeOverlay = () => { setShowAddArtistOverlay(false); newGame() }
-        addHamsterOverlay = <ShowWinner close={closeOverlay} artist={winner} />
+        addArtistOverlay = <ShowWinner close={closeOverlay} artist={winner} />
+    }
+
+    const handleFavoriteClick = (artist) => {
+        setFavoriteArtists([...favoriteArtists, artist])
     }
 
 
@@ -129,7 +154,7 @@ function Battle() {
                     <h1 className="vs-string"> VS.</h1>
                 </>
             )}
-            {showAddArtistOverlay && addHamsterOverlay}
+            {showAddArtistOverlay && addArtistOverlay}
         </div>
     )
 }

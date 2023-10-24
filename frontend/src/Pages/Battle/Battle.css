@@ -1,65 +1,66 @@
+/* Battle Page */
 
-.play-match-container  {
+.play-match-container {
     text-align: center;
-    /* min-height: 60em; */
-    /* margin-top: 2em; */
-}
-
-.artist-match-container {
+  }
+  
+  /* Artist Match */
+  
+  .artist-match-container {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 2em;
-}
-
-.artist-match-container .vs-string {
+  }
+  
+  .artist-match-container .vs-string {
     font-family: var(--feature-font);
     font-size: 4em;
-    color: #12484b;;
-}
-
-.artist-match-card {
+    color: #12484b;
+  }
+  
+  .artist-match-card {
     display: flex;
-    /* align-items: center; */
     flex-direction: column;
-}
-
-.artist-match-card h3 {
+  }
+  
+  .artist-match-card h3 {
     padding: 0;
-}
-
-.contestant-artist-img {
+  }
+  
+  .contestant-artist-img {
     height: 337px;
     width: 333px;
     object-fit: cover;
     border-radius: 50%;
     box-shadow: 4px 5px 10px 1px rgba(0, 0, 0, 0.11);
-}
-.item-name {
+  }
+  
+  .item-name {
     margin: 0.5em;
     margin-block-start: auto;
-}
-
-.play-container {
+  }
+  
+  /* Play Buttons */
+  
+  .play-container {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     justify-content: space-around;
     margin-top: -4rem;
     gap: 4rem;
     align-items: center;
-    overflow-y: hidden;
-}
-
-.play-container :nth-child(2) {
+    overflow-y: hidden; 
+  }
+  
+  .play-container :nth-child(2) {
     order: 2;
-}
-
-
-/* WINNER CSS  */
-
-.winner-overlay-container {
+  }
+  
+  /* Winner Overlay */
+  
+  .winner-overlay-container {
     position: fixed;
     background-color: rgb(211, 146, 200);
     height: 100vh;
@@ -69,140 +70,136 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-
-.winner-artist-h2 {
+  }
+  
+  .winner-artist-h2 {
     color: rgb(37, 49, 59);
     font-family: var(--feature-font);
     font-size: 1.5em;
     margin: 0 0 0.4em 0;
-}
-
-
-.artist-winner-name {
+  }
+  
+  .artist-winner-name {
     margin: 0;
-}
-
-.winner-overlay-container .main-btn {
+  }
+  
+  .winner-overlay-container .main-btn {
     height: min-content;
     margin: -1em 0 0 0;
     padding: 2px;
     margin: 8px;
     width: 142px;
-
-}
-
-/*  WINNER   */
-
-.match-history {
+  }
+  
+  /* Winner */ 
+  
+  .match-history {
     display: flex;
     align-items: center;
     margin: 23px;
     flex-direction: column;
     margin: 0;
-}
-
-.match-history h4 {
+  }
+  
+  .match-history h4 {
     margin-bottom: 2px;
-}
-
-
-.match-points {
+  }
+  
+  .match-points {
     font-weight: bolder;
-}
-
-.artist-winner-image {
-    object-fit: cover;  
+  }
+  
+  .artist-winner-image {
+    object-fit: cover;
     border-radius: 50%;
     box-shadow: 4px 5px 10px 1px rgba(0, 0, 0, 0.11);
     height: 300px;
     width: 333px;
-}
-
-
-
-/* MOBIL VERSION */
-@media (max-width: 500px){
+  }
   
-   /*  .hamster-match-container {
-        display: flex;
-    } */
-
+  /* Media Queries */
+  
+  @media (max-width: 500px) {
+  
+    /* Play Buttons */
+  
     .play-container {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        /* justify-content: space-around; */
-        /* margin-top: 4rem; */
-        gap: 1rem;
-        align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      align-items: center;
     }
-
-    .play-container-mobil {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        /* justify-content: space-around; */
-        /* margin-top: 4rem; */
-        gap: 4rem;
-        align-items: center;
-    }
+  
+    /* Artist Images */
+  
     .contestant-artist-img {
-        height: 150px;
-        width: 150px;
-        object-fit: cover;
-        border-radius: 50%;
-        box-shadow: 4px 5px 10px 1px rgb(0 0 0 / 11%);
+      height: 150px;
+      width: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 4px 5px 10px 1px rgb(0 0 0 / 11%);
     }
-
+  
     .item-name {
-        font-size:medium;
-        margin: 0.5em;
-        margin-block-start: auto;
-    }
-
-    .artist-match-container .vs-string {
-        font-family: var(--feature-font);
-        font-size: 1.3em;
+      font-size: medium;
+      margin: 0.5em;
+      margin-block-start: auto;
     }
     
-    .play-container .main-btn{
-    font-size: 0.7em;
-    border-radius: 1em;
-    padding: 0.5em 3em;
-    outline: none;
-    border: 1px solid #12484b;
-    background-color: #12484b;
-    color: white;
-    width: 126px;
+    /* VS String */
+  
+    .artist-match-container .vs-string {
+      font-size: 1.3em; 
     }
-
-    .gallery-title {
-    text-transform: uppercase;
-    color: rgb(24, 93, 98);
-    font-size: 3.5em;
-    margin-bottom: 2rem;
-}
-
-.greeting p {
-    font-weight: lighter;
-    font-size: 13px;
-    line-height: 0px;
-    text-align: center;
-}
-
-.nav-link {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    flex-wrap: wrap;
-    margin-right: 1em
-}
-.greeting {
-    margin-left: -1em;
-}
-
+  
+    /* Play Buttons */
+    
+    .play-container .main-btn {
+      font-size: 0.7em;
+      padding: 0.5em 3em;
+      width: 126px;
+    }
+  
+    /* Gallery Title */
+  
+    .gallery-title {  
+      font-size: 3.5em;
+    }
+  
+    /* Nav Links */
+  
+    .nav-link {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      margin-right: 1em
+    }
+  
+    /* Greeting */
+  
+    .greeting {
+      margin-left: -1em;
+    }
+  
+  }
+  
+  /* Favorites Icon */
+  
+  .favorite-icon {
+    position: absolute;
+    top: 11px;
+    left: 20px;
+    color: #ffffff91;
+    cursor: pointer;
+    z-index: 2;
+  }
+  
+  .favorite-icon:hover {
+    color: #ff000075;
+  }
+  
+  .favorite-icon.active {
+    color: red; 
   }

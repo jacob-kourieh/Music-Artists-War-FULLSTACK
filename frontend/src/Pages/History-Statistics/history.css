@@ -1,76 +1,75 @@
-.history-Container {
+/* History Container */
+
+.history-container {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   justify-content: space-around;
   margin-top: 3rem;
   gap: 2rem;
-  
 }
 
-  .mastch-wrapper {
-    display: flex;
-    flex-direction: column;
-    background-color: #ffffff38;
-    padding: 2rem;
-    margin: 0 5rem 0 5rem;
-    border-radius: 2rem;
-    box-shadow: 4px 5px 10px 1px rgba(0, 0, 0, 0.11);
-  }
+/* Match Wrapper */
 
+.match-wrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff38;
+  padding: 2rem;
+  margin: 0 5rem 0 5rem;
+  border-radius: 2rem;
+  box-shadow: 4px 5px 10px 1px rgba(0, 0, 0, 0.11);
+}
 
-  .match-items {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+/* Match Items */
 
-  .winner-history {
-    text-align: center;
-    justify-content: center;
-    margin: 1em;
-  }
-  
-  .loser-history {
-    text-align: center;
-    justify-content: center;
-    margin: 1em;
-  }
-  
-  .winner-text,
-  .loser-text {
-    margin-top: 0em;
-  }
-  .buttondelete {
-    border-style: none;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-  }
+.match-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; 
+}
 
-  .clickdelete {
-    border-radius: 19px;
-    width: 11em;
-    height: 5vh;
-    background-color: black;
-    color: white;
-    cursor: pointer;
-  }
+/* Winner & Loser */
 
+.winner-history,
+.loser-history {
+  text-align: center;
+  justify-content: center;
+  margin: 1em;
+}
 
-  .clickdelete:hover {
-    background-color: #d04a4a;
-  }
+.winner-text, 
+.loser-text {
+  margin-top: 0;
+}
 
-  .history-image {
-    height: 200px;
-    width: 200px;
-    object-fit: cover;
-    border-radius: 50%;
-    box-shadow: 4px 5px 10px 1px rgba(0, 0, 0, 0.11);
-  }
+/* Delete Button */
 
+.buttondelete {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.clickdelete {
+  border-radius: 19px;
+  width: 11em;
+  height: 5vh;
+  background-color: black;
+  color: white;
+  cursor: pointer;  
+}
 
+.clickdelete:hover {
+  background-color: #d04a4a;
+}
 
+/* Images */
+
+.history-image {
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 4px 5px 10px 1px rgba(0, 0, 0, 0.11);
+}

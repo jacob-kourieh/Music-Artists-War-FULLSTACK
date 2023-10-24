@@ -1,7 +1,5 @@
 import { useState } from 'react'
-import "../Gallery/gallery.css"
 import FileBase64 from "react-file-base64"
-import "../Gallery/gallery.css"
 import { baseURL } from '../../Utils/baseURL'
 
 

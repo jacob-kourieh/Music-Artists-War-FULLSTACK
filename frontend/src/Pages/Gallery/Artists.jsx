@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import "../Gallery/gallery.css"
 import ShowInfo from './ShowInfo'
 import CircularProgress from '@mui/material/CircularProgress';
 import { baseURL } from '../../Utils/baseURL'
@@ -82,7 +81,7 @@ function Artists() {
             <section className="play-container-artists play-container-mobil">
                 {artists.length > 0 ? filteredArtists.length > 0 ? filteredArtists.map((artist, i) => {
                     return (
-                        <article key={i} className="hamster-gridcard ">
+                        <article key={i} >
                             <div className='crown-box'>
                                 <img src={Crown} alt="crown" className='crown-img' />
                                 <img
@@ -93,7 +92,7 @@ function Artists() {
                             </div>
 
                             <h2 className='artist-centertext'>{artist.name}</h2>
-                            <article className='btn-grup'>
+                            <article className='btn-group'>
                                 <span onClick={() => { deleteArtists(artist._id) }} > <BsFillTrashFill fontSize="1.5em" style={{ fill: '#12484b', cursor: 'pointer' }} /> </span>
                                 <span onClick={() => { handleShowMore(artist) }} > <BsFillArrowUpRightSquareFill fontSize="1.5em" style={{ fill: '#12484b', cursor: 'pointer' }} /> </span>
                             </article>

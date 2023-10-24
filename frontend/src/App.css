@@ -1,87 +1,72 @@
+/* Global Styles */
+
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700;800&family=Slackey&display=swap');
 
-/* --- Global --- */
-
-
-*{
+* {
   box-sizing: border-box;
 }
 
-
-
-
-
-body{
-  margin: 0px;
-  padding: 0px;
+body {
+  margin: 0;
+  padding: 0;
   min-height: 100vh;
   max-width: 100vw;
+  background: linear-gradient(-134deg, #E4A972, #9941D8) fixed;
 }
 
-
 :root {
+
   /* Colors */
 
- 
-
-
   /* Fonts */
-  --feature-font: 'Slackey', cursive; 
+  --feature-font: 'Slackey', cursive;
   --open-sans: 'Open Sans', cursive;
 
-  /* Main features */
+  /* Main features */  
   --box-radius: .5em;
   --box-shadow: 4px 5px 10px 1px rgba(0, 0, 0, 0.11);
   --transition-hover: .2s all;
   --scale-hover: scale(1.02);
+
 }
 
 
-
-
-
+/* In App.css */
 
 main {
-  min-height: 84vh;
-	flex: 1 1 auto;
-	background: linear-gradient(-134deg, #E4A972, #9941D8) fixed;
+  min-height: calc(100vh - 150px); /* 150px is height of header + footer */
 }
 
+/* Reusable Components */
+
 .main-btn {
-	font-size: 1.2em;
-	border-radius: 1em;
-	padding: 0.5em 1em;
-	outline: none;
-	border: 1px solid #12484b;
-    background-color: #12484b;
-    color: white;
+  font-size: 1.2em;
+  border-radius: 1em;
+  padding: 0.5em 1em;
+  outline: none;
+  border: 1px solid #12484b;
+  background-color: #12484b;
+  color: white;
 }
 
 .main-btn:hover {
-	cursor: pointer;
-	border: 1px solid black;
-	background-color: black;
-	color: rgb(31, 167, 177);
+  cursor: pointer;
+  border: 1px solid black;
+  background-color: black;
+  color: rgb(31, 167, 177);
 }
 
+/* Search */
 
-
-
-
-
-/* SEARCH*/
-
-.search-box{
-       /* width: fit-content; */
-    /* height: fit-content; */
-    position: relative;
-    bottom: 114px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* margin-top: -9em;*/
+.search-box {
+  position: relative;
+  bottom: 114px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.input-search{
+
+.input-search {
   height: 43px;
   width: 19em;
   border-style: none;
@@ -92,29 +77,101 @@ main {
   border-radius: 25px;
   transition: all .5s ease-in-out;
   background-color: #12484b;;
-  /* padding-right: 40px; */
   color: #fff;
 }
-.input-search::placeholder{
-  color:rgba(255,255,255,.5);
+
+.input-search::placeholder {
+  color: rgba(255,255,255,.5);
   font-size: 13px;
   letter-spacing: 2px;
-  font-weight: 100;
-  
+  font-weight: 100;  
 }
 
-
-.btn-search:focus ~ .input-search{
+.btn-search:focus ~ .input-search {
   width: 200px;
   border-radius: 0px;
   background-color: transparent;
-  border-bottom:1px solid rgba(255,255,255,.5);
+  border-bottom: 1px solid rgba(255,255,255,.5);
   transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
 }
-.input-search:focus{
-  width: 300px;
+
+.input-search:focus {
+  width: 300px; 
   border-radius: 0px;
   background-color: transparent;
-  border-bottom:1px solid rgba(255,255,255,.5);
-  transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+  border-bottom: 1px solid rgba(255,255,255,.5);
+  transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);  
+}
+
+
+/* Footer */
+  
+footer {
+	padding: 0.5em;
+	background: linear-gradient(268deg, rgb(24, 93, 98), rgb(8, 31, 32));
+  }
+  
+  
+  footer p {
+	margin: 10px 0;
+	color: white;
+  }
+  
+  footer a {
+	color: rgb(150 245 141);
+	margin-right: 5px; 
+  }
+
+
+/* Header */
+@import './Components/header-css.css'; 
+
+/* Battle */
+@import './Pages/Battle/Battle.css';
+
+/* Gallery */
+@import './Pages/Gallery/gallery.css'; 
+
+/* History */
+@import './Pages/History-Statistics/history.css';
+@import './Pages/History-Statistics/statistics.css';
+
+/* Random Song */
+@import './Pages/RandomSong/randomsong.css';
+
+/*AUTH*/
+@import './Pages/Auth/auth.css';
+
+
+
+.auth-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.auth-form .error {
+  color: red;
+  margin-bottom: 1rem;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  border: 1px solid #aaa;
+}
+
+.submit-btn {
+  background: blue;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer; 
 }

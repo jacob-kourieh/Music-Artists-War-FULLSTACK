@@ -10,6 +10,11 @@ app.use(require('./routes/artists'));
 app.use(require('./routes/matches'));
 app.use(require('./routes/randomSong'));
 
+
+const authRoutes = require('./routes/auth');
+app.use('/api/user', authRoutes);
+
+
 const dbo = require('./db/connect');
 
 

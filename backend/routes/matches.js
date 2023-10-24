@@ -9,9 +9,12 @@ const dbo = require('../db/connect');
 // sträng till ett objekt-id (_id)
 const ObjectId = require('mongodb').ObjectId;
 
+const verifyToken = require('./verifyToken');
+
+
 
 //lista över våra matches
-recordRoutes.route("/matches").get(function (req, res) {
+recordRoutes.route('/matches').get(function (req, res) {
     dbo.getDb('artistsDB')
         .collection('matches')
         .find({})

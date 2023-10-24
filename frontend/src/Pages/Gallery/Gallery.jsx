@@ -1,5 +1,4 @@
 import { useState } from "react"
-import "../Gallery/gallery.css"
 import Artists from "./Artists"
 import AddNew from "./AddNew"
 import { Link } from "react-router-dom"
@@ -24,7 +23,7 @@ function Gallery() {
     return (
         <section>
             <article className="gallery-header">
-                <h1 className="gallery-title"> Gallery</h1>
+                <h1 className="gallery-title margin-tittle"> Gallery</h1>
                 <p>In the gallery you can see all artists participating in the game and can click on artists' pictures to see more information about them. You can also use the search function to search for artist name, artist nationality or artist genres.</p>
                 <article className="btn-container">
                     <button className="main-btn" onClick={showOverlay}>Add artist</button>

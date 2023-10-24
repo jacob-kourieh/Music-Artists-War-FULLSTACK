@@ -1,83 +1,92 @@
+/* Statistics Container */
 .statistics-container {
 	display: grid;
 	grid-template-columns: auto auto;
 	justify-content: space-evenly;
 	text-align: center;
-}
-.statistics-container > div {
-	margin: 4em 1em;
-}	
-
-.stats-header-text {
+  }
+  
+  .statistics-container > div {
+	margin: 4em 1em; 
+  }
+  
+  /* Header */  
+  .stats-header-text {
 	margin-bottom: 0;
 	font-family: var(--feature-font);
 	font-size: x-large;
-}
-.stats-item-name {
+  }
+  
+  .stats-item-name {
 	margin-bottom: 0;
-	margin-top: 0;
-}
-
-.statistic-num-result{
+	margin-top: 0; 
+  }
+  
+  /* Numbers */
+  .statistic-num-result {
 	font-weight: bold;
-}
-.statistics-container ol {
+  }
+  
+  /* List */
+  .statistics-container ol {
 	background-color: #ffffff38;
-    border-radius: 2em;
+	border-radius: 2em;
 	list-style-position: inside;
 	padding: 1em 2em;
 	margin-bottom: 2em;
 	box-shadow: 4px 5px 10px 1px rgba(0, 0, 0, 0.11);
-}
-
-.statistics-container li {
+  }
+  
+  .statistics-container li {
 	list-style-type: none;
 	margin: 4em;
-}
-
-.statistics-image {
+  }
+  
+  /* Images */
+  .statistics-image {
 	height: 300px;
-    width: 300px;
-    object-fit: cover;
-    border-radius: 50%;
+	width: 300px;
+	object-fit: cover;
+	border-radius: 50%;
 	box-shadow: 4px 5px 10px 1px rgba(0, 0, 0, 0.11);
-}
-
-.statsic-cont{
+  }
+  
+  /* Layout */
+  .statsic-cont {
 	display: flex;
-    flex-direction: column;
-    gap: 4em;
-}
-
-@media only screen and (max-width: 1050px) {
+	flex-direction: column;
+	gap: 4em; 
+  }
+  
+  /* Media Queries */
+  @media only screen and (max-width: 1050px) {
 	.statistics-container {
-		grid-template-columns: auto;
+	  grid-template-columns: auto;
 	}
-}
-
-
-.otline-winner {
-	border: solid 5px red;
-}
-.otline-winner2 {
+  }
+  
+  /* Winner Styles */
+  .otline-winner {
+	border: solid 5px red; 
+  }
+  
+  .otline-winner2 {
 	border: solid 5px rgb(16, 8, 8);
-}
-
-
-
-.crown-img{
+  }
+  
+  /* Crown Image */ 
+  .crown-img {
 	width: 180px;
-    height: 150;
-    position: relative;
-    bottom: -3em;
-    right: 3em;
-    transform: rotate(352deg);
-	/* visibility: hidden; */
+	height: 150;
+	position: relative;
+	bottom: -3em;
+	right: 3em;
+	transform: rotate(352deg);
 	display: none;
-}
-.crown-box{
+  }
+  
+  .crown-box {
 	display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-
-}
+	flex-direction: column;
+	flex-wrap: wrap;
+  }

@@ -1,0 +1,67 @@
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.dashboard-title {
+    font-size: 2em;
+    color: #444;
+}
+
+.dashboard-welcome {
+    font-size: 1.5em;
+    color: #666;
+}
+
+.dashboard-content {
+    width: 80%;
+    margin-top: 20px;
+}
+
+.dashboard-section-title {
+    font-size: 1.2em;
+    color: #333;
+    margin: 20px 0;
+}
+
+.dashboard-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+.dashboard-button {
+    display: inline-block;
+    background-color: #444;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.dashboard-button-logout {
+    display: inline-block;
+    background-color: #f44336; /* Red */
+    color: white;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.dashboard-image {
+    width: 100%;
+    max-width: 200px;
+}

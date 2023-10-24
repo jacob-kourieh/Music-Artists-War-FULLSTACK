@@ -25,8 +25,8 @@ router.get('/api/genres', (req, res) => {
 router.get('/api/randomsong', async (req, res) => {
     try {
         const genreId = req.query.genreId || null;
-        const { info, previewUrl } = await requestValidSong(genreId);
-        res.json({ info, previewUrl });
+        const { artist, song, previewUrl, albumArtUrl } = await requestValidSong(genreId);
+        res.json({ artist, song, previewUrl, albumArtUrl });
     } catch (error) {
         console.error(error);
         res.status(500).json({ message: 'Server error' });
@@ -56,8 +56,10 @@ async function requestValidSong(genreId = null) {
     const randomSong = topTracksData.data[Math.floor(Math.random() * topTracksData.data.length)];
     const artist = randomSong.artist.name;
     const song = randomSong.title;
+    const albumArtUrl = randomSong.album.cover_big;
 
-    return { info: `${artist} - ${song}`, previewUrl: randomSong.preview };
+    return { artist: artist, song: song, previewUrl: randomSong.preview, albumArtUrl };
+
 }
 
 module.exports = router;
